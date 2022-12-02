@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ArmMechanic : MonoBehaviour
+public class ShowerTimer : MonoBehaviour
 {
     [SerializeField] private Vector3 h_endPoint = Vector3.zero;
     [SerializeField] private Vector3 v_endPoint = Vector3.zero;
@@ -55,7 +55,7 @@ public class ArmMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Is er gedrukt op het scherm, laat dan object verticaal gaan
+        //If the screen's touched, the shower curtains will open, "ending" the game
         if (isTouched)
         {
             if(timer = <5f){
