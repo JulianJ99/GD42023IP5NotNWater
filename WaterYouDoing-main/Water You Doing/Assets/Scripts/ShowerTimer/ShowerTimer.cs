@@ -12,12 +12,15 @@ public class ShowerTimer : MonoBehaviour
     private Vector3 startPosition = Vector3.zero;
     private Vector3 endVerticalPosistion = Vector3.zero;
     private Vector3 objPosition = Vector3.zero;
-    public Sprite open;
+
 
     private bool horizontalMove = true;
     private bool isTouched = false;
 
-    public float timer;
+
+    public GameObject timerscript;
+    float showertimer;
+    
 
     //used for scaling difficulty
     float difficulty;
@@ -32,7 +35,8 @@ public class ShowerTimer : MonoBehaviour
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
+        TimerScript timer = timerscript.GetComponent<TimerScript>();
+        showertimer = timer.timer;
         controls = new TouchController();
         //controls.Touch.TouchPosition.performed += ctx => ScreenIsTouch();
     }
@@ -59,7 +63,7 @@ public class ShowerTimer : MonoBehaviour
         //If the screen's touched, the shower curtains will open, "ending" the game
         if (isTouched)
         {
-            if((timer <= 6f) || (timer >= 4f) ){
+            if((showertimer <= 6f) || (showertimer >= 4f) ){
                 GlobalGameManager.Instance.WinGame();
             }
             else{
@@ -67,11 +71,11 @@ public class ShowerTimer : MonoBehaviour
             }
         }
 
-        if (timer <= 8f){
+        if (showertimer<= 8f){
             //Fog 1
         }
 
-        if (timer <= 6f){
+        if (showertimer <= 6f){
             //Fog 2
         }
 
