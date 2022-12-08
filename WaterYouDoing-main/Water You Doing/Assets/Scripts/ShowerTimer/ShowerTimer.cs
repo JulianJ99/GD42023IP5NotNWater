@@ -35,8 +35,7 @@ public class ShowerTimer : MonoBehaviour
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        TimerScript timer = timerscript.GetComponent<TimerScript>();
-        showertimer = timer.timer;
+        
         controls = new TouchController();
         //controls.Touch.TouchPosition.performed += ctx => ScreenIsTouch();
     }
@@ -60,14 +59,21 @@ public class ShowerTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TimerScript timer = timerscript.GetComponent<TimerScript>();
+        showertimer = timer.timer;
+        Debug.Log(showertimer);
+
         //If the screen's touched, the shower curtains will open, "ending" the game
         if (isTouched)
         {
+            Debug.Log("Touched!");
             if((showertimer <= 6f) || (showertimer >= 4f) ){
                 GlobalGameManager.Instance.WinGame();
+                Debug.Log("You win!");
             }
             else{
                 GlobalGameManager.Instance.LoseGame();
+                Debug.Log("You lose.");
             }
         }
 
@@ -88,6 +94,7 @@ public class ShowerTimer : MonoBehaviour
         {
             if (isFirstTouch)
             {
+                Debug.Log("First touch");
                 isFirstTouch = false;
             }
             else
@@ -95,12 +102,6 @@ public class ShowerTimer : MonoBehaviour
                 isTouched = true;
             }
         }
-    }
-
-
-    public void ResetStartPosition()
-    {
-
     }
 
 }
