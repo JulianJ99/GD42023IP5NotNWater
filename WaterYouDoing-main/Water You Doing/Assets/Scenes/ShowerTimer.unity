@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!223 &44652382 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3655314117787162334, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+  m_PrefabInstance: {fileID: 655733572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &340104750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7768373616792604283, guid: 544d7714684e5034eb51b7bb886d8b4b, type: 3}
@@ -510,6 +515,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9078674311798434663, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: ScoreCanvas
+      value: 
+      objectReference: {fileID: 44652382}
+    - target: {fileID: 9078674311798434663, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: remlivesTXT
       value: 
       objectReference: {fileID: 340104750}
@@ -848,6 +857,7 @@ GameObject:
   - component: {fileID: 1335295097}
   - component: {fileID: 1335295096}
   - component: {fileID: 1335295098}
+  - component: {fileID: 1335295099}
   m_Layer: 0
   m_Name: ShowerTimer
   m_TagString: Untagged
@@ -869,6 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerscript: {fileID: 403309078}
   gameManagement: {fileID: 714491844}
+  isTouched: 0
 --- !u!4 &1335295097
 Transform:
   m_ObjectHideFlags: 0
@@ -914,7 +925,19 @@ MonoBehaviour:
     m_ActionId: 09f3784f-38ca-400f-89dd-cce5f9fee271
     m_ActionName: Touch/TouchInput
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1335295096}
+        m_TargetAssemblyTypeName: ShowerTimer, Assembly-CSharp
+        m_MethodName: ScreenIsTouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2cd1cc05-5643-454c-b0ad-d46dff55ef73
     m_ActionName: Touch/TouchPress[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -934,6 +957,32 @@ MonoBehaviour:
   m_DefaultActionMap: Touch
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!61 &1335295099
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335295095}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!225 &1379333299 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 311697798081736252, guid: 5352be755897e4f2f9dfaba4a064cb0d, type: 3}

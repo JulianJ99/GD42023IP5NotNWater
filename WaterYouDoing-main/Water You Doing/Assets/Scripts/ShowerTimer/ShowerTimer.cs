@@ -15,7 +15,7 @@ public class ShowerTimer : MonoBehaviour
 
 
     private bool horizontalMove = true;
-    private bool isTouched = false;
+    
 
 
     public GameObject timerscript;
@@ -29,7 +29,11 @@ public class ShowerTimer : MonoBehaviour
     public GameObject gameManagement;
 
     private TouchController controls;
+
+
+
     bool isFirstTouch = true;
+    public bool isTouched = false;
 
     private void Awake()
     {
@@ -67,7 +71,7 @@ public class ShowerTimer : MonoBehaviour
         if (isTouched)
         {
             Debug.Log("Touched!");
-            if((showertimer <= 6f) || (showertimer >= 4f) ){
+            if((showertimer <= 6) && (showertimer >= 4) ){
                 GlobalGameManager.Instance.WinGame();
                 Debug.Log("You win!");
             }
@@ -78,23 +82,22 @@ public class ShowerTimer : MonoBehaviour
         }
 
         if (showertimer<= 8f){
-            //Fog 1
+            //Fog 1, best way to implement this would be to change the image of the GameObject for the windows with a second version that's slightly foggy
         }
 
         if (showertimer <= 6f){
-            //Fog 2
+            //Fog 2, best way to implement this would be to change the image of the GameObject for the windows with a third version that's even more foggy
         }
 
     }
-
 
     public void ScreenIsTouch(InputAction.CallbackContext context)
     {
         if (context.started)
         {
+            Debug.Log("Touched!");
             if (isFirstTouch)
             {
-                Debug.Log("First touch");
                 isFirstTouch = false;
             }
             else
