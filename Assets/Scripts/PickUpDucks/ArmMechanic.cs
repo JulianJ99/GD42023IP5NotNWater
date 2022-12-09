@@ -21,13 +21,13 @@ public class ArmMechanic : MonoBehaviour
     private float v_interpolateValue = 0.0f;
 
     public float verticalMoveSpeed = 1f;
-    public float horizontalMoveSpeed = 0.65f;
+    public float horizontalMoveSpeed = 0.5f;
 
     //used for scaling difficulty
     float difficulty;
     float difficultyScaling = 0.2f;
 
-    public GameManagementV2 gameManagement;
+    public GameObject gameManagement;
 
     private TouchController controls;
     bool isFirstTouch = true;
@@ -52,7 +52,7 @@ public class ArmMechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = PlayersProgress.difficulty;
+        difficulty = GlobalGameManager.Instance.difficulty;
 
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         this.h_endPoint = this.GetRelativeEndpoint();
@@ -61,7 +61,6 @@ public class ArmMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameManagement = FindObjectOfType<GameManagementV2>();
         //Is er gedrukt op het scherm, laat dan object verticaal gaan
         if (isTouched)
         {
@@ -106,7 +105,7 @@ public class ArmMechanic : MonoBehaviour
                         this.ResetBools();
                         this.ResetV_InterpolateValue();
                         //gameManagement.GetComponent<GameManagement>().LoseGame();                       //Game over screen
-                        gameManagement.LoseGame();
+                        GlobalGameManager.Instance.LoseGame();
                     }
                 }
             }

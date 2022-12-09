@@ -12,15 +12,21 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
    
     public void PlayGame()
     {
-        SceneManager.LoadScene(3);
+        GlobalGameManager.Instance.StartGame();
     }
 
     public void Tips()
     {
         SceneManager.LoadScene("tips");
+    }
+
+    public void OpenShop()
+    {
+        SceneManager.LoadScene("Shop");
     }
 
     private void Start()
