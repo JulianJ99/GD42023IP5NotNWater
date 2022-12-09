@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
    
     public void PlayGame()
     {
@@ -21,6 +22,11 @@ public class MainMenu : MonoBehaviour
     public void Tips()
     {
         SceneManager.LoadScene("tips");
+    }
+
+    public void OpenShop()
+    {
+        SceneManager.LoadScene("Shop");
     }
 
     private void Start()
