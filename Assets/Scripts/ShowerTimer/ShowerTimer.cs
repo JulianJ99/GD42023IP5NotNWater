@@ -81,11 +81,11 @@ public class ShowerTimer : MonoBehaviour
             }
         }
 
-        if (showertimer<= 8){
+        if (showertimer<= 8f){
             //Fog 1, best way to implement this would be to change the image of the GameObject for the windows with a second version that's slightly foggy
         }
 
-        if (showertimer <= 6){
+        if (showertimer <= 6f){
             //Fog 2, best way to implement this would be to change the image of the GameObject for the windows with a third version that's even more foggy
         }
 
