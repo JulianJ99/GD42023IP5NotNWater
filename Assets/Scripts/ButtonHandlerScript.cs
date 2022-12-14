@@ -19,4 +19,11 @@ public class ButtonHandlerScript : MonoBehaviour
         }
         gameManagement.StartTheGame();
     }
+
+    public void PlayNextGame()
+    {
+        GlobalGameManagementV2 globalGameManagement = FindObjectOfType<GlobalGameManagementV2>();
+        globalGameManagement.MoveToTheNextGame();
+        gameObject.SetActive(true);
+    }
 }

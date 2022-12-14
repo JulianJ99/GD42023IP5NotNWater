@@ -7,7 +7,7 @@ public static class PlayersProgress {
     public static int difficulty = 0;
     public static float lives = 10;
     public static List<int> listOfPlayedMinigames = new List<int>();
-    public static int minigameNr = 1;
+    public static int minigameNr = 0;
 
     public static bool WasTheGameAlreadyPlayed(int nextGameToPlay)
     {

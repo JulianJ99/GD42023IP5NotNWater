@@ -55,7 +55,6 @@ public class GlobalGameManagementV2 : MonoBehaviour
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
         score.text = 0 + " points";
     }
-
     public void Update()
     {
         GameManagementV2 currentManagingClass = FindObjectOfType<GameManagementV2>();
@@ -83,8 +82,8 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 gamesUI.SetActive(false);
                     if (PlayersProgress.lives > 0)
                     {
-                    livesLost.text = "You have lost " + currentManagingClass.minigameParameters.hpToLose + " lives";
-                    livesLeft.text = "Be careful, only " + PlayersProgress.lives + " lives left";
+                    livesLost.text = "You have lost " + currentManagingClass.minigameParameters.waterAmountToLose + " liters of water";
+                    livesLeft.text = "Be careful, only " + PlayersProgress.lives + " litres left";
                     partialLose.SetActive(true);
                         Debug.Log("Game was lost!");
                     }
@@ -111,12 +110,14 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 minigameName.text = currentManagingClass.minigameParameters.minigameName;
                 minigameDescription.text = currentManagingClass.minigameParameters.minigameDescription;
                 prepUI.SetActive(true);
+                winScreen.SetActive(false);
+               
 
             }
         }
         else
         {
-            Debug.Log("Error! Current Game Manager cannot be found. Please restart the game");
+          //Debug.Log("Error! Current Game Manager cannot be found. Please restart the game");
         }
     }
 
