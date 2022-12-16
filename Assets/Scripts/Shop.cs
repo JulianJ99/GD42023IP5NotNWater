@@ -3,37 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Shop : MonoBehaviour
+public static class Shop
 {
-    public Text scoreText;
-    public GameObject soldPanelShower1;
-    public GameObject soldPanelShower2;
-    public GameObject soldPanelShower3;
-
-    public Button buySkin1;
-    public Button buySkin2;
-    public Button buySkin3;
-
-    private void Start()
+    public static void EquipSkin(Skin skin)
     {
-        scoreText.text = "10000";
+        if (!skin.equiped)
+        {
+            skin.equiped = true;
+            skin.equipSkin.interactable = false;
+            skin.equipedText.text = "EQUIPED";
+            // equip it
+        }
     }
 
-    public void BuyShowerSkin1()
+    public static void BuySkin(Skin skin)
     {
-        soldPanelShower1.SetActive(true);
-        buySkin1.interactable = false;
-    }
-
-    public void BuyShowerSkin2()
-    {
-        soldPanelShower2.SetActive(true);
-        buySkin2.interactable = false;
-    }
-
-    public void BuyShowerSkin3()
-    {
-        soldPanelShower3.SetActive(true);
-        buySkin3.interactable = false;
+        if (!skin.purchased)
+        {
+            Debug.Log("NO");
+            if (skin.cost <= PlayersProgress.totalScore)
+            {
+                Debug.Log("BOUGHT!");
+                PlayersProgress.totalScore -= skin.cost;
+                skin.purchased = true;
+                skin.buySkin.interactable = false;
+                skin.equipSkinVisual.SetActive(true);
+            }
+        }
     }
 }

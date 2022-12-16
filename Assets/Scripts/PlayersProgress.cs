@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class PlayersProgress {
-    public static int totalScore = 0;
+    public static int totalScore = 100;
     public static int difficulty = 0;
     public static float lives = 10;
     public static List<int> listOfPlayedMinigames = new List<int>();

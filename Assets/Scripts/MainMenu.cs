@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     //public GameObject GlitchEffect;
+    public Text money;  
 
     public void BackToMenu()
     {
@@ -31,7 +32,12 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        money.text = PlayersProgress.totalScore.ToString();
         //float backgroundScaler = GetComponent<RectTransform>().rect.width / GlitchEffect.GetComponent<RectTransform>().rect.width;
         //GlitchEffect.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().rect.width, GlitchEffect.GetComponent<RectTransform>().rect.height * backgroundScaler);
+    }
+
+    private void Update() {
+        money.text = PlayersProgress.totalScore.ToString();       
     }
 }
