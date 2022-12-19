@@ -828,7 +828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 012dc04858f89b248852f690c3dc54bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 445bfb84e3647d24caa95271346c14ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -879,6 +879,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerscript: {fileID: 403309078}
   gameManagement: {fileID: 714491844}
+  canvas: {fileID: 1272698517}
+  GAMESTART: {fileID: 21300000, guid: 445bfb84e3647d24caa95271346c14ec, type: 3}
+  FOG1: {fileID: 21300000, guid: 64be24a50e91a264686ec892d23cf144, type: 3}
+  FOG2: {fileID: 21300000, guid: 11ea0098001b4b3448949658b999087d, type: 3}
+  GAMEEND: {fileID: 21300000, guid: 4bcf7e232fb721348a61d824f6ba382e, type: 3}
   isTouched: 0
 --- !u!4 &1335295097
 Transform:

@@ -27,19 +27,23 @@ public class ShowerTimer : MonoBehaviour
     float difficultyScaling = 0.2f;
 
     public GameObject gameManagement;
-
+    public GameObject canvas; 
+  
     private TouchController controls;
-
-
+    public Sprite GAMESTART, FOG1, FOG2, GAMEEND; 
 
     bool isFirstTouch = true;
     public bool isTouched = false;
-
+ 
     private void Awake()
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        
+        Sprite GAMESTART =  Resources.Load<Sprite>("showertimerbgclosed");  
+        Sprite FOG1 = Resources.Load<Sprite>("showertimerbgclosed1");    
+        Sprite FOG2 = Resources.Load<Sprite>("showertimerbgclosed2");  
+        Sprite GAMEEND = Resources.Load<Sprite>("showertimerbg");
+
         controls = new TouchController();
         //controls.Touch.TouchPosition.performed += ctx => ScreenIsTouch();
     }
@@ -70,23 +74,30 @@ public class ShowerTimer : MonoBehaviour
         //If the screen's touched, the shower curtains will open, "ending" the game
         if (isTouched)
         {
+            canvas.GetComponent<Image>().sprite = GAMEEND;
             Debug.Log("Touched!");
             if((showertimer <= 6) && (showertimer >= 4) ){
+                
                 GlobalGameManager.Instance.WinGame();
                 Debug.Log("You win!");
+                isTouched = false;
             }
             else{
+                
                 GlobalGameManager.Instance.LoseGame();
                 Debug.Log("You lose.");
+                isTouched = false;
             }
         }
 
         if (showertimer<= 8){
             //Fog 1, best way to implement this would be to change the image of the GameObject for the windows with a second version that's slightly foggy
+            canvas.GetComponent<Image>().sprite = FOG1;
         }
 
         if (showertimer <= 6){
             //Fog 2, best way to implement this would be to change the image of the GameObject for the windows with a third version that's even more foggy
+            canvas.GetComponent<Image>().sprite = FOG2;
         }
 
     }
