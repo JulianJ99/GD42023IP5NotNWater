@@ -33,6 +33,7 @@ public class ShowerTimer : MonoBehaviour
     public Sprite GAMESTART, FOG1, FOG2, GAMEEND; 
 
     bool isFirstTouch = true;
+    public bool keepTiming = true;
     public bool isTouched = false;
  
     private void Awake()
@@ -56,6 +57,9 @@ public class ShowerTimer : MonoBehaviour
     {
         controls.Disable();
     }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,13 +71,16 @@ public class ShowerTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         TimerScript timer = timerscript.GetComponent<TimerScript>();
         showertimer = timer.timer;
         Debug.Log(showertimer);
 
+
         //If the screen's touched, the shower curtains will open, "ending" the game
         if (isTouched)
         {
+            keepTiming = false;
             canvas.GetComponent<Image>().sprite = GAMEEND;
             Debug.Log("Touched!");
             if((showertimer <= 6) && (showertimer >= 4) ){
@@ -90,12 +97,12 @@ public class ShowerTimer : MonoBehaviour
             }
         }
 
-        if (showertimer<= 8){
+        if ((showertimer<= 8) && keepTiming == true){
             //Fog 1, best way to implement this would be to change the image of the GameObject for the windows with a second version that's slightly foggy
             canvas.GetComponent<Image>().sprite = FOG1;
         }
 
-        if (showertimer <= 6){
+        if ((showertimer <= 6) && keepTiming == true){
             //Fog 2, best way to implement this would be to change the image of the GameObject for the windows with a third version that's even more foggy
             canvas.GetComponent<Image>().sprite = FOG2;
         }
