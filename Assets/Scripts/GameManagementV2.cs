@@ -19,6 +19,7 @@ public class GameManagementV2 : MonoBehaviour
     {
         Time.timeScale = 0;
         CalculateTimeForTheLevel();
+        GetComponent<TimerScript>().InitializeTheTimer();
         GetComponentInChildren<AudioSource>().clip = minigameParameters.musicForTheMinigame;
         GetComponentInChildren<AudioSource>().Play();
     }
@@ -26,10 +27,10 @@ public class GameManagementV2 : MonoBehaviour
     public void CalculateTimeForTheLevel()
     {
         calculatedTimeForLvl = minigameParameters.timeToCompleteLevel * 1000;
-        calculatedTimeForLvl -= calculatedTimeForLvl * PlayersProgress.difficulty * 0.05f;
-        if (calculatedTimeForLvl < minigameParameters.minimumTimeThreshold)
+        calculatedTimeForLvl -= calculatedTimeForLvl * PlayersProgress.difficulty * 0.0425f;
+        if (calculatedTimeForLvl < minigameParameters.minimumTimeThreshold * 1000)
         {
-            calculatedTimeForLvl = minigameParameters.minimumTimeThreshold;
+            calculatedTimeForLvl = minigameParameters.minimumTimeThreshold * 1000;
         }
     }
     private void Update()
@@ -90,8 +91,10 @@ public class GameManagementV2 : MonoBehaviour
     {
         if (gameStatus != GameStatus.Lost)
         {
+            GetComponent<AudioSource>().Stop();
             gameStatus = GameStatus.Lost;
             PlayersProgress.lives -= minigameParameters.waterAmountToLose;
+            ResetTheTimer();
         }
     }
 

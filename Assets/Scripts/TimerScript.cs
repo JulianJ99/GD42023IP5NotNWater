@@ -9,7 +9,7 @@ public class TimerScript : MonoBehaviour
     public Slider slider;
 
     public float timer = 0;
-    public float maxTime = 1000;
+    public float maxTime = -1;
 
      GameObject Background;
     GameManagementV2 gameManagement;
@@ -22,16 +22,22 @@ public class TimerScript : MonoBehaviour
         Background.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().rect.width, Background.GetComponent<RectTransform>().rect.height * backgroundScaler);
 
         */
-        gameManagement = FindObjectOfType<GameManagementV2>();
+    }
+    public void InitializeTheTimer()
+    {
+        gameManagement = GetComponent<GameManagementV2>();
         if (gameManagement != null)
         {
             maxTime = gameManagement.calculatedTimeForLvl / 1000;
         }
     }
-
     void Update()
     {
-        UpdateTimer();
+        slider = FindObjectOfType<Slider>();
+        if (slider != null && maxTime != -1)
+        {
+            UpdateTimer();
+        }
     }
 
     void UpdateTimer()

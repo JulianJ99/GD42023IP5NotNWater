@@ -25,7 +25,7 @@ public class ArmMechanic : MonoBehaviour
 
     //used for scaling difficulty
     float difficulty;
-    float difficultyScaling = 0.2f;
+    float difficultyScaling = 0.075f;
 
     public GameManagementV2 gameManagement;
 
@@ -197,14 +197,14 @@ public class ArmMechanic : MonoBehaviour
     //Verplaats het object verticaal naar beneden
     private void MoveObjectTowardsVerticalEndPoint()
     {
-        Vector2 newPos = this.LerpPositions(this.objPosition, this.endVerticalPosistion, v_interpolateValue);
+        Vector2 newPos = this.LerpPositions(this.objPosition, this.endVerticalPosistion, v_interpolateValue * (1.1f + (difficulty/16)));
         this.transform.position = newPos;
     }
 
     //Verplaats het object verticaal naar boven
     private void MoveObjectTowardsVerticalStartPoint()
     {
-        Vector2 newPos = this.LerpPositions(this.endVerticalPosistion, this.objPosition, v_interpolateValue);
+        Vector2 newPos = this.LerpPositions(this.endVerticalPosistion, this.objPosition, v_interpolateValue * (1.1f + (difficulty/16)));
         if (v_interpolateValue > 1.1)
         {
             Debug.Log("Handmatige reset");

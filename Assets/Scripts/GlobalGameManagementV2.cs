@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,21 +15,13 @@ public class GlobalGameManagementV2 : MonoBehaviour
     [SerializeField] TextMeshProUGUI pointsWon;
     [SerializeField] TextMeshProUGUI funFactText;
     [SerializeField] TextMeshProUGUI minigameName;
-    [SerializeField] TextMeshProUGUI livesLost;
-    [SerializeField] TextMeshProUGUI livesLeft;
     [SerializeField] TextMeshProUGUI minigameDescription;
-    GameObject winScreen;
-    GameObject partialLose;
-    GameObject loseScreen;
-    GameObject gamesUI;
-    GameObject pauseMenu;
-    GameObject prepUI;
     List<int> scenesWithMinigames = new List<int>()
     {
        1, 2, 3
     };
     public float livesAtTheBeginning;
-    private bool actionPerformed = false;
+    private bool funFactGenerated = false;
 
     public bool alive;
 
@@ -45,12 +38,6 @@ public class GlobalGameManagementV2 : MonoBehaviour
     {
 
         PlayersProgress.lives = livesAtTheBeginning;
-        winScreen = InitializeGameObject("win_screen");
-        loseScreen = InitializeGameObject("lose_screen");
-        prepUI = InitializeGameObject("preparation");
-        pauseMenu = InitializeGameObject("pause_menu");
-        gamesUI = InitializeGameObject("ui");
-        partialLose = InitializeGameObject("partial_lose");
         lives.text = "Lives: " + PlayersProgress.lives;
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
         score.text = 0 + " points";
@@ -62,14 +49,13 @@ public class GlobalGameManagementV2 : MonoBehaviour
         {
                 if (currentManagingClass.gameStatus == GameStatus.Won)
                 {
-                
-                loseScreen.SetActive(false);
-                gamesUI.SetActive(false);
-                prepUI.SetActive(false);
-                partialLose.SetActive(false);
+
+                ActivatePartOfTheUI("win_screen");
                 pointsWon.text = "+" + currentManagingClass.scoreForTheGame + " points";
-                funFactText.text = GenerateTheFunFact();
-                    winScreen.SetActive(true);
+                if (!funFactGenerated)
+                {
+                    funFactText.text = GenerateTheFunFact();
+                }
                 Time.timeScale = 0;
                 }
                 else if (currentManagingClass.gameStatus == GameStatus.Paused)
@@ -78,20 +64,16 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 }
                 else if (currentManagingClass.gameStatus == GameStatus.Lost)
                 {
-                Time.timeScale = 0;
-                gamesUI.SetActive(false);
+               
                     if (PlayersProgress.lives > 0)
                     {
-                    livesLost.text = "You have lost " + currentManagingClass.minigameParameters.waterAmountToLose + " liters of water";
-                    livesLeft.text = "Be careful, only " + PlayersProgress.lives + " litres left";
-                    partialLose.SetActive(true);
+                    ActivatePartOfTheUI("partial_lose");
                         Debug.Log("Game was lost!");
                     }
                     else
                     {
-                        lives.text = PlayersProgress.lives + " lives left";
-                        loseScreen.SetActive(true);
-                        Debug.Log("There's still hope");
+                    Time.timeScale = 0;
+                    ActivatePartOfTheUI("lose_screen");
                     }
                     //check if theres enough lives and move to another scene if so
                 }
@@ -100,18 +82,15 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 if (Time.timeScale == 0)
                 {
                     Time.timeScale = 1;
-                    pauseMenu.SetActive(false);
-                    prepUI.SetActive(false); 
                 }
-                ManageTheUI();
+                ActivatePartOfTheUI("ui");
                 }
                 else if (currentManagingClass.gameStatus == GameStatus.Not_Started)
             {
+                funFactGenerated = false;
                 minigameName.text = currentManagingClass.minigameParameters.minigameName;
                 minigameDescription.text = currentManagingClass.minigameParameters.minigameDescription;
-                prepUI.SetActive(true);
-                winScreen.SetActive(false);
-               
+                ActivatePartOfTheUI("preparation");
 
             }
         }
@@ -123,53 +102,37 @@ public class GlobalGameManagementV2 : MonoBehaviour
 
     public void PauseTheGame()
     {
-        pauseMenu.SetActive(true);
+        ActivatePartOfTheUI("pause");
         Time.timeScale = 0;
     }
     public string GenerateTheFunFact()
     {
-        //to be created;
-        return "Did you know that saving the planet is humanity's most important mission?";
+        funFactGenerated = true;
+        FactRandomizer factsManagement = GetComponent<FactRandomizer>();
+        if (factsManagement != null)
+        {
+            return factsManagement.GetFact();
+        }
+        return "Did you know that the fact manager is not working right now?";
     }
 
-    public void ManageTheUI()
-    {
-        if (!gamesUI.activeSelf)
-        {
-            gamesUI.SetActive(true);
-        }
-        if (prepUI.activeSelf)
-        {
-            prepUI.SetActive(false);
-        }
-        if (pauseMenu != null)
-        {
-            pauseMenu.SetActive(false);
-        }
-        if (partialLose.activeSelf)
-        {
-            partialLose.SetActive(false);
-        }
-        if (loseScreen.activeSelf)
-        {
-            loseScreen.SetActive(false);
-        }
-        if (winScreen.activeSelf)
-        {
-            winScreen.SetActive(false);
-        }
-    }
-    public GameObject InitializeGameObject(string gameObjectName)
+    private void ActivatePartOfTheUI(string keyphrase)
     {
         foreach (ConstantGameObj gameObject in Resources.FindObjectsOfTypeAll(typeof(ConstantGameObj)))
+        {
+            if (gameObject.CheckTheName(keyphrase))
             {
-            if (gameObject.CheckTheName(gameObjectName))
+                gameObject.gameObject.SetActive(true);
+            }
+            else
             {
-                return gameObject.gameObject;
+                gameObject.gameObject.SetActive(false);
             }
         }
-        Debug.Log("Object " + gameObjectName + " was not found!");
-        return null;
+    }
+
+    private void UpdateTextboxes(GameStatus gameStatus)
+    {
     }
 
     public bool MoveToTheNextGame()
@@ -177,7 +140,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
         List<int> gamesToPickFrom = new List<int>();
         PlayersProgress.difficulty += 1;
         PlayersProgress.minigameNr++;
-        foreach(int item in scenesWithMinigames)
+        foreach (int item in scenesWithMinigames)
         {
             if (PlayersProgress.WasTheGameAlreadyPlayed(item))
             {
@@ -186,6 +149,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
         }
         if (gamesToPickFrom.Count <= 0)
         {
+            PlayersProgress.listOfPlayedMinigames.Remove(SceneManager.GetActiveScene().buildIndex);
             gamesToPickFrom = PlayersProgress.listOfPlayedMinigames;
             PlayersProgress.listOfPlayedMinigames = new List<int>();
         }

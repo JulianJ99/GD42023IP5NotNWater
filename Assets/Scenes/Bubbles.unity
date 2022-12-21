@@ -174,18 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1219089765767681771, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3862653b8b8097248ba1f50d845b7eb5, type: 3}
     - target: {fileID: 1219089765767681772, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
       propertyPath: m_Name
       value: LocalGameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1219089765767681773, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
-      propertyPath: minigameParameters
-      value: 
-      objectReference: {fileID: 11400000, guid: 471a4ee79aa23ac478018711be2bcd69, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
 --- !u!1 &630948807

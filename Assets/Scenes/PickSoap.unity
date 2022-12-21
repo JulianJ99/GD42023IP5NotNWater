@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LocalGameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1219089765767681773, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
+      propertyPath: minigameParameters
+      value: 
+      objectReference: {fileID: 11400000, guid: e4f094515934c3f4aa649f02ea4f1fca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17bd16ff710534c41b02b9a56ea9524e, type: 3}
 --- !u!1001 &1538657502780643131

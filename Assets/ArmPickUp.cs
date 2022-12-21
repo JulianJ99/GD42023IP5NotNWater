@@ -41,6 +41,7 @@ public class ArmPickUp : MonoBehaviour
             if (soapDestroyCount == 3)
             {
                 gameManagement.WinGame();
+                Debug.Log("Game won!");
             }
         }
     }

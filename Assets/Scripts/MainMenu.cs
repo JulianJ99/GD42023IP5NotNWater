@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     //public GameObject GlitchEffect;
     GlobalGameManagementV2 playTheGame;
+    public GameObject toSetActive;
     private void Start()
     {
         playTheGame = GetComponent<GlobalGameManagementV2>();
@@ -17,7 +18,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-   
+    public void ActivateTest()
+    {
+        toSetActive.SetActive(true);
+    }
     public void PlayGame()
     {
         playTheGame = FindObjectOfType<GlobalGameManagementV2>();
