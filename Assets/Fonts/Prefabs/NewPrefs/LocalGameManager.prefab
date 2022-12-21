@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7301617324691514754
+--- !u!1 &1219089765767681772
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,79 +8,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5914141945086245199}
-  - component: {fileID: 9078674311798434663}
-  - component: {fileID: 7693617699413078019}
-  - component: {fileID: 938109425944036664}
+  - component: {fileID: 1219089765767681770}
+  - component: {fileID: 1219089765767681773}
+  - component: {fileID: 1219089765767681771}
+  - component: {fileID: 6212162290120501535}
   m_Layer: 0
-  m_Name: GlobalGameManager
+  m_Name: LocalGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5914141945086245199
+--- !u!4 &1219089765767681770
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301617324691514754}
+  m_GameObject: {fileID: 1219089765767681772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.283471, y: -1.216443, z: -0.041175462}
+  m_LocalPosition: {x: 5.3384695, y: 1.589606, z: 2.2538824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9078674311798434663
+--- !u!114 &1219089765767681773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301617324691514754}
+  m_GameObject: {fileID: 1219089765767681772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a55b772968ed4e245b221ea26d605f15, type: 3}
+  m_Script: {fileID: 11500000, guid: 08acae8ab0d38b64d87491d2f839ac86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScreen: {fileID: 0}
-  loseScreen: {fileID: 0}
-  scenes:
-  - Bubbles
-  - PickSoap
-  - SoapBalancing
-  StartingLives: 5
-  difficulty: 0
-  timerLimit: 30
-  remaingLives: 0
-  remlivesTXT: {fileID: 0}
-  alive: 0
-  factScreen: {fileID: 0}
-  FactText: {fileID: 0}
-  ScoreScriptObject: {fileID: 0}
-  ScoreCanvas: {fileID: 0}
---- !u!114 &7693617699413078019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301617324691514754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02206dbe47ba62b4b855c20d682009f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!82 &938109425944036664
+  scoreForTheGame: 1500
+  calculatedTimeForLvl: 1000
+  minigameParameters: {fileID: 11400000, guid: 471a4ee79aa23ac478018711be2bcd69, type: 2}
+  gameStatus: 3
+--- !u!82 &1219089765767681771
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301617324691514754}
+  m_GameObject: {fileID: 1219089765767681772}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3801466646213890130, guid: bed732b845009f84ebc660d7c9f16893, type: 2}
@@ -88,7 +64,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -170,3 +146,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6212162290120501535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219089765767681772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e27ff8f66010946bee1b2acfeefab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  timer: 0
+  maxTime: 1000
