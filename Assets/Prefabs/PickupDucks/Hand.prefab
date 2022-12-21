@@ -103,8 +103,6 @@ MonoBehaviour:
   h_endPoint: {x: 25, y: 0, z: 0}
   v_endPoint: {x: 0, y: -7, z: 0}
   open: {fileID: 21300000, guid: b674bfdc0b134d14d80e7f12d44f3ead, type: 3}
-  verticalMoveSpeed: 1
-  horizontalMoveSpeed: 0.5
   gameManagement: {fileID: 0}
 --- !u!61 &1538657502690094136
 BoxCollider2D:

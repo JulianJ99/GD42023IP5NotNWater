@@ -6,13 +6,10 @@ using UnityEngine;
 public class MinigameValuesTemplate : ScriptableObject
 {
     public float timeToCompleteLevel;
-    public int basePointsForLevel;
-    public int bonusPointsMax;
+    public int maximumPoints;
     public string minigameName;
-    public float minimumTimeThreshold;
-    public GameScenarios gameScenarios = GameScenarios.Rush;
-    public Color interfaceColor;
+    public float minimumTimeAllowed;
     public AudioClip musicForTheMinigame;
     public string minigameDescription;
-    public int waterAmountToLose;
+    public int hpToLose;
 }

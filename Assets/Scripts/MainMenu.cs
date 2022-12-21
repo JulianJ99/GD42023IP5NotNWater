@@ -7,25 +7,16 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     //public GameObject GlitchEffect;
-    GlobalGameManagementV2 playTheGame;
-    public GameObject toSetActive;
-    private void Start()
-    {
-        playTheGame = GetComponent<GlobalGameManagementV2>();
-    }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
-    public void ActivateTest()
-    {
-        toSetActive.SetActive(true);
-    }
+
+   
     public void PlayGame()
     {
-        playTheGame = FindObjectOfType<GlobalGameManagementV2>();
-        playTheGame.MoveToTheNextGame();
+        GlobalGameManager.Instance.StartGame();
     }
 
     public void Tips()
@@ -33,4 +24,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("tips");
     }
 
+    public void OpenShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
+    private void Start()
+    {
+        //float backgroundScaler = GetComponent<RectTransform>().rect.width / GlitchEffect.GetComponent<RectTransform>().rect.width;
+        //GlitchEffect.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().rect.width, GlitchEffect.GetComponent<RectTransform>().rect.height * backgroundScaler);
+    }
 }
