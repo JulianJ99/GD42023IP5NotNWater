@@ -6,62 +6,43 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    public bool TimerWin = false;
-    public float maxTime = 10f;
-    public float minTime = 5f;
     public Slider slider;
 
-    public float difficultyScaling = 1f;
-    public float difficulty;
-    public float timer;
-    bool gameOver = false;
+    public float timer = 0;
+    public float maxTime = -1;
 
-    public GameObject Background;
+     GameObject Background;
+    GameManagementV2 gameManagement;
 
     void Start()
     {
-        float backgroundScaler = GetComponent<RectTransform>().rect.width / Background.GetComponent<RectTransform>().rect.width;
+        /*  float backgroundScaler = GetComponent<RectTransform>().rect.width / Background.GetComponent<RectTransform>().rect.width;
 
         slider.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().rect.width, slider.GetComponent<RectTransform>().rect.height);
         Background.GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().rect.width, Background.GetComponent<RectTransform>().rect.height * backgroundScaler);
 
-        difficulty = GlobalGameManager.Instance.difficulty;
-
-        //lengthens game time if goal is to survive the timer
-        if (TimerWin)
-            difficultyScaling = -difficultyScaling;
-
-        maxTime -= (difficulty * difficultyScaling);
-        if (maxTime < minTime)
-            maxTime = minTime;
-
-        timer = maxTime;
+        */
     }
-
+    public void InitializeTheTimer()
+    {
+        gameManagement = GetComponent<GameManagementV2>();
+        if (gameManagement != null)
+        {
+            maxTime = gameManagement.calculatedTimeForLvl / 1000;
+        }
+    }
     void Update()
     {
-        UpdateTimer();
+        slider = FindObjectOfType<Slider>();
+        if (slider != null && maxTime != -1)
+        {
+            UpdateTimer();
+        }
     }
 
     void UpdateTimer()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0 && !gameOver)
-        {
-            if (TimerWin)
-            {
-                GlobalGameManager.Instance.WinGame();
-            }
-            else
-            {
-                GlobalGameManager.Instance.LoseGame();
-            }
-            gameOver = true;
-        }
-        else
-        {
-            slider.GetComponent<Slider>().value = 1 - (maxTime - timer) / maxTime;
-        }
+        slider.GetComponent<Slider>().value = slider.GetComponent<Slider>().value - (Time.deltaTime / maxTime);
     }
 
     public float GetCurrentTime()
