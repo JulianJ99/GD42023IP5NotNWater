@@ -14,7 +14,7 @@ public class ShowerTimer : MonoBehaviour
     private Vector3 objPosition = Vector3.zero;
 
 
-    private bool horizontalMove = true;
+    private bool horizontalMove = true; 
     
 
 
