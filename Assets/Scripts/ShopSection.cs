@@ -2,13 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopPickDuck : MonoBehaviour
+public class ShopSection : MonoBehaviour
 {
-    public Skin [] duckSkins;
+   public Skin [] miniGameSkins;
+
+   public SkinChanger skinChanger;
+
+   private void OnEnable() {
+    if (SkinDTO.skins != null)
+    {
+        miniGameSkins = SkinDTO.skins;
+        Debug.Log(miniGameSkins[1]);
+    }
+   }
+
+   private void OnDisable() {
+    SkinDTO.skins = miniGameSkins;
+   }
+
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
-        foreach (Skin skin in duckSkins)
+        skinChanger = SkinChanger.instance;
+        foreach (Skin skin in miniGameSkins)
         {
             skin.CheckSkin();
         }
@@ -16,22 +35,22 @@ public class ShopPickDuck : MonoBehaviour
 
     public void BuySkin1()
     {
-        Shop.BuySkin(duckSkins[0]);
+        Shop.BuySkin(miniGameSkins[0]);
     }
 
     public void BuySkin2()
     {
-        Shop.BuySkin(duckSkins[1]);
+        Shop.BuySkin(miniGameSkins[1]);
     }
 
     public void BuySkin3()
     {
-        Shop.BuySkin(duckSkins[2]);
+        Shop.BuySkin(miniGameSkins[2]);
     }
 
     public void EquipSkin1()
     {
-        foreach (Skin skin in duckSkins)
+        foreach (Skin skin in miniGameSkins)
         {
             if (skin.equiped)
             {
@@ -40,12 +59,13 @@ public class ShopPickDuck : MonoBehaviour
                 skin.equipSkin.interactable = true;
             }
         }
-        Shop.EquipSkin(duckSkins[0]);
+        Shop.EquipSkin(miniGameSkins[0]);
+        skinChanger.ChangeDuckSkin(miniGameSkins[0]);
     }
 
     public void EquipSkin2()
     {
-        foreach (Skin skin in duckSkins)
+        foreach (Skin skin in miniGameSkins)
         {
             if (skin.equiped)
             {
@@ -54,12 +74,13 @@ public class ShopPickDuck : MonoBehaviour
                 skin.equipSkin.interactable = true;
             }
         }
-        Shop.EquipSkin(duckSkins[1]);
+        Shop.EquipSkin(miniGameSkins[1]);
+        skinChanger.ChangeDuckSkin(miniGameSkins[1]);
     }
 
     public void EquipSkin3()
     {
-        foreach (Skin skin in duckSkins)
+        foreach (Skin skin in miniGameSkins)
         {
             if (skin.equiped)
             {
@@ -68,6 +89,7 @@ public class ShopPickDuck : MonoBehaviour
                 skin.equipSkin.interactable = true;
             }
         }
-        Shop.EquipSkin(duckSkins[2]);
+        Shop.EquipSkin(miniGameSkins[2]);
+        skinChanger.ChangeDuckSkin(miniGameSkins[2]);
     }
 }

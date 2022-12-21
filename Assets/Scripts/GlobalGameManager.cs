@@ -41,7 +41,7 @@ public class GlobalGameManager : MonoBehaviour
 
         if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this.gameObject);
             Instance = this;
         }
         else Destroy(gameObject); //any time the instance is not null destory the gameobject that was just created.

@@ -7,7 +7,7 @@ public class Skin
 {
     public string name;
     public int cost;
-    public GameObject image;
+    public Sprite spriteImage;
     public bool equiped;
     public bool purchased;
     [SerializeField]

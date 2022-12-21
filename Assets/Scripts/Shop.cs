@@ -12,7 +12,7 @@ public static class Shop
             skin.equiped = true;
             skin.equipSkin.interactable = false;
             skin.equipedText.text = "EQUIPED";
-            // equip it
+           // SkinChanger.ChangeDuckSkin(skin);
         }
     }
 
