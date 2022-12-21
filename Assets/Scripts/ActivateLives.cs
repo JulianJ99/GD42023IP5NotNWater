@@ -14,8 +14,8 @@ public class ActivateLives : MonoBehaviour
     void Start()
     {
         remlivesTXT = GameObject.FindGameObjectWithTag("LivesText");
-        Debug.Log(remlivesTXT.gameObject.name);
-        Debug.Log(SceneManager.GetActiveScene().name);
+        //Debug.Log(remlivesTXT.gameObject.name);
+        //Debug.Log(SceneManager.GetActiveScene().name);
         livesActive = Array.Exists(scenes, element => element == SceneManager.GetActiveScene().name);
         remlivesTXT.gameObject.SetActive(livesActive);
 

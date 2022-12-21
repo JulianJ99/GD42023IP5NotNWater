@@ -101,7 +101,7 @@ public class GlobalGameManager : MonoBehaviour
                 TimerScript timer = timercanvas.GetComponent<TimerScript>();
                 float maxminigametime;
 
-                if (timer != null)
+                if (timer.TimerWin)
                 {
                     maxminigametime = timer.maxTime;
                     ScoreScriptObject.AddPoint(maxminigametime, maxminigametime);

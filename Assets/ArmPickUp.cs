@@ -8,11 +8,10 @@ public class ArmPickUp : MonoBehaviour
     public Sprite closed;
     public float radius = 1f;
     public float offSet;
-    public AudioClip clipToPlay;
     public new Collider2D collider;
     private int soapDestroyCount = 0;
 
-    public GameManagementV2 gameManagement;
+    public GameObject gameManagement;
 
     private AudioSource audioSource = null;
 
@@ -40,8 +39,7 @@ public class ArmPickUp : MonoBehaviour
             armMechanic.IsSoapPickedUp();
             if (soapDestroyCount == 3)
             {
-                gameManagement.WinGame();
-                Debug.Log("Game won!");
+                GlobalGameManager.Instance.WinGame();
             }
         }
     }
@@ -51,7 +49,7 @@ public class ArmPickUp : MonoBehaviour
         if (this.audioSource == null)
             return;
 
-        this.audioSource.PlayOneShot(clipToPlay);
+        this.audioSource.PlayOneShot(this.audioSource.clip);
     }
 
     public void OnDrawGizmosSelected()

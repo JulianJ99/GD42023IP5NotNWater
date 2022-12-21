@@ -14,7 +14,7 @@ public class BubbleManager : MonoBehaviour
     public LayerMask bubbleMask;
     public int bubbleWinCount = 70;
     Collider2D[] colliders;
-    GameManagementV2 localGameManager;
+    public GameManagement GameManagement;
 
     int spawnAreaHeight = 30;
     int spawnAreaWidth = 20;
@@ -31,7 +31,6 @@ public class BubbleManager : MonoBehaviour
     float volumeDecreasingThreshholdInSeconds = 0.4f;
     private void Start()
     {
-        localGameManager = FindObjectOfType<GameManagementV2>();
         SpawnBubbles(bubbleCount);
         difficulty = GlobalGameManager.Instance.difficulty;
     }
@@ -58,7 +57,7 @@ public class BubbleManager : MonoBehaviour
         if (CountBubbles() >= bubbleWinCount)
         {
             detector.StopMicrophone();
-            localGameManager.WinGame();
+            GlobalGameManager.Instance.WinGame();
         }
     }
 

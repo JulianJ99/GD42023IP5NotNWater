@@ -27,7 +27,7 @@ public class BalancingScript : MonoBehaviour
     public GameObject Character;
     public AudioSource audioSource;
 
-    GameManagementV2 localManager;
+    public GameManagement gameManagement;
 
     private void Awake()
     {
@@ -38,7 +38,6 @@ public class BalancingScript : MonoBehaviour
         }
 
         SetRandomFallDirection();
-        localManager = FindObjectOfType<GameManagementV2>();
 
     }
 
@@ -58,39 +57,13 @@ public class BalancingScript : MonoBehaviour
                 else Debug.Log("Could not find character");
             }
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            xRotation = 1;
-            if (xRotation >= MinimumRotation || xRotation <= -MinimumRotation)
-            {
-                //Debug.Log(xRotation);
-                if (Character != null)
-                {
-                    Character.transform.Rotate(0, 0, -(xRotation * RotateSpeed * Time.deltaTime));
-                }
-                else Debug.Log("Could not find character");
-            }
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            xRotation = -1;
-            if (xRotation >= MinimumRotation || xRotation <= -MinimumRotation)
-            {
-                //Debug.Log(xRotation);
-                if (Character != null)
-                {
-                    Character.transform.Rotate(0, 0, -(xRotation * RotateSpeed * Time.deltaTime));
-                }
-                else Debug.Log("Could not find character");
-            }
-        }
 
         if (Character.transform.rotation.z >= DeathRotationValue || Character.transform.rotation.z <= -DeathRotationValue)
         {
             if (!gameOver)
             {
                 gameOver = true;
-                localManager.LoseGame();
+                GlobalGameManager.Instance.LoseGame();
             }
         }
 
