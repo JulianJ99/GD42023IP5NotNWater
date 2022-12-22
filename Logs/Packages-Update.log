@@ -45,3 +45,13 @@ The following packages were added:
   com.unity.timeline@1.6.4
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.7.8
+
+=== Thu Dec 22 14:10:50 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.2d.animation from version 7.0.6 to 7.0.7
+  com.unity.2d.psdimporter from version 6.0.4 to 6.0.5
+  com.unity.2d.spriteshape from version 7.0.5 to 7.0.6

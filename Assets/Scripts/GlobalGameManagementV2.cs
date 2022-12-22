@@ -29,14 +29,13 @@ public class GlobalGameManagementV2 : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         Microphone.Start(Microphone.devices[0], false, 1, 1);
         Microphone.End(Microphone.devices[0]);
-        DontDestroyOnLoad(this);
     }
 
     public void Start()
     {
-
         PlayersProgress.lives = livesAtTheBeginning;
         lives.text = "Lives: " + PlayersProgress.lives;
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
