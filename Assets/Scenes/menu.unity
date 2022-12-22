@@ -5639,6 +5639,10 @@ PrefabInstance:
       propertyPath: minigameDescription
       value: 
       objectReference: {fileID: 7449201869143788579}
+    - target: {fileID: 938109425944036664, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5914141945086245199, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: m_RootOrder
       value: 3

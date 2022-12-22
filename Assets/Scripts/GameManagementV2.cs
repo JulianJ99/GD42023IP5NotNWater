@@ -95,6 +95,7 @@ public class GameManagementV2 : MonoBehaviour
             gameStatus = GameStatus.Lost;
             PlayersProgress.lives -= minigameParameters.waterAmountToLose;
             ResetTheTimer();
+            PlayersProgress.difficulty -= 1;
         }
     }
 
