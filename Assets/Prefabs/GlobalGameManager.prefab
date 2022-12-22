@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9078674311798434663}
   - component: {fileID: 7693617699413078019}
   - component: {fileID: 938109425944036664}
-  - component: {fileID: 1957155340225641434}
   m_Layer: 0
   m_Name: GlobalGameManager
   m_TagString: Untagged
@@ -47,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55b772968ed4e245b221ea26d605f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScreen: {fileID: 4237021041173234169, guid: 384f8aa3af97e4b558fce894d5ccee52, type: 3}
-  loseScreen: {fileID: 6038523202409451093, guid: ac79f62a60dd8411dafd700134139103, type: 3}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   scenes:
   - Bubbles
   - PickSoap
@@ -171,16 +170,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1957155340225641434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301617324691514754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5972d652287074548bebae5e9ae78be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duck: {fileID: 2621863238071415767, guid: ad80395edab5d8447add0331641adc82, type: 3}

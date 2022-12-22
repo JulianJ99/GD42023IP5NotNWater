@@ -189,6 +189,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
             PlayersProgress.listOfPlayedMinigames = new List<int>();
         }
         int nextGameToLoad = gamesToPickFrom[UnityEngine.Random.Range(0, gamesToPickFrom.Count)];
+        PlayersProgress.listOfPlayedMinigames.Add(nextGameToLoad);
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
         score.text = PlayersProgress.totalScore + " points"; 
         SceneManager.LoadScene(nextGameToLoad);

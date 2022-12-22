@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 62c168fe53e4a4d479109e9859068ed6
+<<<<<<<< HEAD:Assets/Sprites/PickupDucks/duck purple.png.meta
+guid: 4d4e354b0242a4875b3342c1f28857d9
+========
+guid: 590b339219f883c478b2dac3deedb7fe
+>>>>>>>> dev:Assets/Prefabs/PickupDucks/instructionsPickup2.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

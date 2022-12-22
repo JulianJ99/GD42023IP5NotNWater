@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: db6856fd7bf7ca74a9dc380331534a35
+<<<<<<<< HEAD:Assets/Prefabs/NewPrefs.meta
+guid: a99654548874845bf81f86075fa3c61c
+========
+guid: 9e883e1df5a2b2e4f9526048f317a2e2
+>>>>>>>> dev:Assets/Prefabs/BlowBubbles.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
