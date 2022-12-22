@@ -18,7 +18,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
     [SerializeField] TextMeshProUGUI minigameDescription;
     List<int> scenesWithMinigames = new List<int>()
     {
-       1, 2, 3
+       1, 2, 3, 4
     };
     public float livesAtTheBeginning;
     private bool funFactGenerated = false;
