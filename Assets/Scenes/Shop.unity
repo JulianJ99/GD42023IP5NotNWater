@@ -417,9 +417,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 787138245}
-        m_TargetAssemblyTypeName: ShopMain, Assembly-CSharp
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 787138246}
+        m_TargetAssemblyTypeName: ButtonHandlerScript, Assembly-CSharp
+        m_MethodName: ReturnToTheMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4149,6 +4149,7 @@ GameObject:
   - component: {fileID: 787138242}
   - component: {fileID: 787138241}
   - component: {fileID: 787138245}
+  - component: {fileID: 787138246}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4253,10 +4254,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 787138240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05d77f4ac27d403489dfcaca131c8eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 446b4929c508a854987a1fca89679c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 2137321370}
+--- !u!114 &787138246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787138240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e59b7af9c2255a40ba65bd5d77045a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788792712
 GameObject:
   m_ObjectHideFlags: 0

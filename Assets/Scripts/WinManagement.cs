@@ -17,7 +17,7 @@ public class WinManagement : MonoBehaviour
     float maximumTimeForAnimation = 1.15f;
     List<string> randomEncouragingTexts = new List<string>()
     {
-        "Good job!", "Perfect!", "Excellent!", "Brilliant!", "Fuck yeah", "≈бать ты жесткий", "Oh yeah", "Let's Gooo", "Nice!", "Super!", "Keep going!"
+        "Good job!", "Perfect!", "Excellent!", "Brilliant!", "Oh yeah", "Let's Gooo", "Nice!", "Super!", "Keep going!"
     };
     public AudioClip cheeringSoundToPlay;
     public GameObject bonusUIGroup;

@@ -5262,6 +5262,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106272773}
   m_CullTransparentMesh: 1
+--- !u!114 &574330895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8583080465215561283, guid: d970727253881c048b69ab696615262e, type: 3}
+  m_PrefabInstance: {fileID: 7109169043767472089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &787138240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,6 +5497,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &855329336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855329320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a7b3fc6a87f654e8ebbd142ebe7b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainPointsText: {fileID: 574330895}
+  countDownText: {fileID: 1941722170}
+  bonusPointsSound: {fileID: 8300000, guid: 4dd586c1b4531bc43888858198faf65f, type: 3}
+  pointsToAdd: 20
 --- !u!1 &904735515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5976,24 +6003,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[0]
-      value: Sample fact 2
+      value: Most shower owners long for a larger shower, as nearly 52% wish their
+        shower had more space
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[1]
-      value: Again one more sample fact
+      value: Average showers can use anywhere between 25 and 75 gallons of water,
+        which is considerably more than baths
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[2]
-      value: 'Did you know that: Using less water is good for the planet'
+      value: Using less water is good for the planet
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[3]
-      value: 'Did you know that: Fact system is not filled with facts yet'
+      value: Over half of people turn their showerheads all the way up to get the
+        temperature as high as possible
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[4]
-      value: 'Did you know that: Googling fun facts is hard, and I have a deadline
-        tomorrow'
+      value: The average shower in America lasts roughly 13 minutes
       objectReference: {fileID: 0}
     - target: {fileID: 1382274594, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: lives
@@ -6524,6 +6553,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905795395}
   m_CullTransparentMesh: 1
+--- !u!114 &1941722170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4911365201372611239, guid: d970727253881c048b69ab696615262e, type: 3}
+  m_PrefabInstance: {fileID: 7109169043767472089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1951949217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7946157231699974122, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
@@ -6731,6 +6771,10 @@ PrefabInstance:
       propertyPath: m_ScreenMatchMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6487791512436071027, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 7946157231699974122, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
       propertyPath: m_Name
       value: GameLost
@@ -6845,6 +6889,10 @@ PrefabInstance:
       propertyPath: m_ScreenMatchMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 820131502904296475, guid: 9c5b02349abcf34479f5525629f1dfac, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 1940101735923254282, guid: 9c5b02349abcf34479f5525629f1dfac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6936,6 +6984,10 @@ PrefabInstance:
       propertyPath: m_ScreenMatchMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3677344034091079135, guid: d970727253881c048b69ab696615262e, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 4237021041173234169, guid: d970727253881c048b69ab696615262e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7020,7 +7072,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2928989765189846939, guid: d970727253881c048b69ab696615262e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d970727253881c048b69ab696615262e, type: 3}
 --- !u!114 &7109169043767472090 stripped
 MonoBehaviour:
@@ -7167,6 +7220,10 @@ PrefabInstance:
       propertyPath: m_ScreenMatchMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6050361529792847119, guid: 2fd2540078ddba7449315cff65d07953, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 7025103898460999423, guid: 2fd2540078ddba7449315cff65d07953, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -7305,6 +7362,10 @@ PrefabInstance:
     - target: {fileID: 131215476908400152, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
       propertyPath: m_ScreenMatchMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 131215476908400152, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 2237102263318216173, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
       propertyPath: m_SortingOrder
@@ -7456,6 +7517,10 @@ PrefabInstance:
     - target: {fileID: 2953856418991287013, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
       propertyPath: m_ScreenMatchMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953856418991287013, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 3203087945987098748, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
       propertyPath: m_text
