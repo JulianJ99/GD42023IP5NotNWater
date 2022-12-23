@@ -33,4 +33,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("tips");
     }
 
+    public void OpenShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
 }

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 14
   basePointsForLevel: 6
-  bonusPointsMax: 9
+  bonusPointsMax: 4
   minigameName: Pick up!
-  minimumTimeThreshold: 5
+  minimumTimeThreshold: 4
   gameScenarios: 2
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 8300000, guid: 3862653b8b8097248ba1f50d845b7eb5, type: 3}

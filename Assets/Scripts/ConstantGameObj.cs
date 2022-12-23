@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConstantGameObj : MonoBehaviour
 {
@@ -22,5 +23,11 @@ public class ConstantGameObj : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void GameLost()
+    {
+        SceneManager.LoadScene("menu");
+        this.gameObject.SetActive(false);
     }
 }

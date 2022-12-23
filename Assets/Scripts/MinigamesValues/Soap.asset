@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Soap
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 11
-  basePointsForLevel: 10
+  basePointsForLevel: 7
   bonusPointsMax: 0
   minigameName: Balance!
-  minimumTimeThreshold: 6
+  minimumTimeThreshold: 5
   gameScenarios: 1
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 8300000, guid: 3862653b8b8097248ba1f50d845b7eb5, type: 3}
   minigameDescription: Try not to fall from the soap
-  waterAmountToLose: 3
+  waterAmountToLose: 2

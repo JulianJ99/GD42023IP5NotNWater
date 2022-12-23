@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonHandlerScript : MonoBehaviour
 {
@@ -9,6 +10,16 @@ public class ButtonHandlerScript : MonoBehaviour
     }
     private void Awake()
     {
+    }
+    public void ReturnToTheMainMenu()
+    {
+        foreach (ConstantGameObj gameObject in Resources.FindObjectsOfTypeAll(typeof(ConstantGameObj)))
+        {
+            Destroy(gameObject.gameObject);  
+        }
+        Destroy(FindObjectOfType<GlobalGameManagementV2>().gameObject);
+        SceneManager.LoadScene(0);
+
     }
     public void StartGame()
     {

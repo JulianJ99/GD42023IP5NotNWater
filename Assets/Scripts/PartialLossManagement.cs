@@ -12,14 +12,14 @@ public class PartialLossManagement : MonoBehaviour
     public TextMeshProUGUI lossIndicator;
     public Image imageToChange;
     public List<Sprite> visualHealthVariations;
-    int timeUntilNextLevel = 5;
+    int timeUntilNextLevel = 4;
     int hpLostByPlayer = 1;
     int hpLossShown = 0;
     float livesLeft = 0;
     bool countdownStarted = false;
     bool delayWasPassed = false;
     bool lossIndicatorIsSeen = false;
-    float timeToDisplayHitIndicator = 0.5f;
+    float timeToDisplayHitIndicator = 0.45f;
     public Vector2 centerOfTheBar;
     public AudioClip hpLossSound;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class PartialLossManagement : MonoBehaviour
     private void OnEnable()
     {
         hpLostByPlayer = FindObjectOfType<GameManagementV2>().minigameParameters.waterAmountToLose;
-        timeUntilNextLevel = 5;
+        timeUntilNextLevel = 4;
         delayWasPassed = false;
         livesLeft = PlayersProgress.lives + hpLostByPlayer;
         livesLeftText.text = livesLeft.ToString();
@@ -53,7 +53,7 @@ public class PartialLossManagement : MonoBehaviour
         }
         else if (timeUntilNextLevel <= 0)
         {
-            proceedToTheNextLevel.text = "(5)";
+            proceedToTheNextLevel.text = "(4)";
             GetComponent<ButtonHandlerScript>().PlayNextGame();
         }
         DisplayWaterLoss();
@@ -86,7 +86,7 @@ public class PartialLossManagement : MonoBehaviour
     IEnumerator CountdownCoroutine()
     {
         countdownStarted = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.06f);
         timeUntilNextLevel--;
         proceedToTheNextLevel.text = "(" + timeUntilNextLevel + ")";
         countdownStarted = false;
@@ -99,7 +99,7 @@ public class PartialLossManagement : MonoBehaviour
         yield return new WaitForSeconds(timeToDisplayHitIndicator);
         lossIndicator.text = "";
         hpLossShown++;
-        yield return new WaitForSeconds(timeToDisplayHitIndicator / 1.4f);
+        yield return new WaitForSeconds(timeToDisplayHitIndicator / 1.7f);
         lossIndicatorIsSeen = false;
         //lossIndicator.transform.position = centerOfTheBar;
 

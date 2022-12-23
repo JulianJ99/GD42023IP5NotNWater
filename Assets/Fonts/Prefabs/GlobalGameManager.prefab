@@ -167,8 +167,6 @@ MonoBehaviour:
   pointsWon: {fileID: 0}
   funFactText: {fileID: 0}
   minigameName: {fileID: 0}
-  livesLost: {fileID: 0}
-  livesLeft: {fileID: 0}
   minigameDescription: {fileID: 0}
   livesAtTheBeginning: 10
   alive: 0

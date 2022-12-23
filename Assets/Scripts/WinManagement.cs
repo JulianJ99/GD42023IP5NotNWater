@@ -9,15 +9,15 @@ public class WinManagement : MonoBehaviour
     public TextMeshProUGUI mainPointsText;
     public TextMeshProUGUI bonusText;
     public AudioClip bonusPointsSound;
-    int mainPoints = 12;
+    int mainPoints = 0;
     int actualPts = 0;
-    int bonusPoints = 9;
+    int bonusPoints = 0;
     int preAddedPoints=  0;
     bool hasStartedAnimation = false;
     float maximumTimeForAnimation = 1.15f;
     List<string> randomEncouragingTexts = new List<string>()
     {
-        "Good job!", "Perfect!", "Excellent!", "Brilliant!", "Fuck yeah", "≈бать ты жесткий", "Oh yeah", "Let's Gooo", "Nice!", "Super!", "Keep going!"
+        "Good job!", "Perfect!", "Excellent!", "Brilliant!", "Oh yeah", "Let's Gooo", "Nice!", "Super!", "Keep going!"
     };
     public AudioClip cheeringSoundToPlay;
     public GameObject bonusUIGroup;
@@ -30,6 +30,8 @@ public class WinManagement : MonoBehaviour
 
     void OnEnable()
     {
+        mainPoints = FindObjectOfType<GameManagementV2>().totalBaseScore;
+        bonusPoints = FindObjectOfType<GameManagementV2>().totalBonusScore;
         textToRotate.text = randomEncouragingTexts[UnityEngine.Random.Range(0, randomEncouragingTexts.Count)];
         actualPts = System.Convert.ToInt32(System.Math.Round(mainPoints * 0.4f, 1));
         mainPointsText.text = "+" + actualPts;

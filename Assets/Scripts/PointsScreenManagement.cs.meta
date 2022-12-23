@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/PointsScreenManagement.cs.meta
+guid: 78a7b3fc6a87f654e8ebbd142ebe7b36
+========
+guid: b05d77f4ac27d403489dfcaca131c8eb
+>>>>>>>> origin/working:Assets/Scripts/ShopMain.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

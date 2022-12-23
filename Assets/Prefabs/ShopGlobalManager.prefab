@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5652835071075330982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670540118418886467}
+  - component: {fileID: 6697493542134860615}
+  - component: {fileID: 2935956364155425025}
+  m_Layer: 0
+  m_Name: ShopGlobalManager
+  m_TagString: ShopGlobalManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670540118418886467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652835071075330982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 705.5, y: 427.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6697493542134860615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652835071075330982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6676904c8a1f24500b85026f94756503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameSkins:
+  - name: Classic duck
+    cost: 0
+    spriteImage: {fileID: 21300000, guid: eaaf57de8621703479524a504389bff0, type: 3}
+    equiped: 1
+    purchased: 1
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
+  - name: Purple duck
+    cost: 50
+    spriteImage: {fileID: 21300000, guid: 2a33ee94f3aec45518314e2a00b22c36, type: 3}
+    equiped: 0
+    purchased: 0
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
+  - name: Duck with glasses
+    cost: 125
+    spriteImage: {fileID: 21300000, guid: 2f4992193671c4b0d929bb45c4f5e376, type: 3}
+    equiped: 0
+    purchased: 0
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
+  modifiedSkins: []
+  skinChanger: {fileID: 2935956364155425025}
+--- !u!114 &2935956364155425025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652835071075330982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9776168a119d44f580122db5e4c6276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duck: {fileID: 2621863238071415767, guid: 0b05b201d1af417428eac3dd939295a1, type: 3}
+  toilet: {fileID: 964632662110697138, guid: 1b59096d2a6614db78f8133294cad1c6, type: 3}

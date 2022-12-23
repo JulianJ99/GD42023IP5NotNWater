@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class GameManagementV2 : MonoBehaviour
 {
-    public int scoreForTheGame = 0;
+    public int totalBaseScore = 0;
+    public int totalBonusScore = 0;
     public float calculatedTimeForLvl = 1000;
     public Stopwatch levelTimer = new Stopwatch();
     public MinigameValuesTemplate minigameParameters;
@@ -67,32 +68,35 @@ public class GameManagementV2 : MonoBehaviour
     public void WinGame()
     {
         float playersReactionPercentage = (calculatedTimeForLvl - levelTimer.ElapsedMilliseconds) / calculatedTimeForLvl;
-        if (gameStatus != GameStatus.Won)
+        if (gameStatus != GameStatus.Won && gameStatus == GameStatus.Ongoing)
         {
+            GetComponent<AudioSource>().Stop();
             gameStatus = GameStatus.Won;
             PlayersProgress.listOfPlayedMinigames.Add(SceneManager.GetActiveScene().buildIndex);
-            scoreForTheGame = CalculateScoreToAdd(playersReactionPercentage);
-            PlayersProgress.totalScore += scoreForTheGame;
+            PlayersProgress.totalScore += CalculateScoreToAdd(playersReactionPercentage);
             ResetTheTimer();
         }
         
     }
-    private void ResetTheTimer()
+    public void ResetTheTimer()
     {
+        levelTimer.Stop();
         FindObjectOfType<TimerScript>().slider.value = 1;
     }
     public int CalculateScoreToAdd(float playersReductionPercentage)
     {
         float bonusDifficultyMultiplier = 1 + (PlayersProgress.difficulty / 12);
-        float result = (minigameParameters.basePointsForLevel + (playersReductionPercentage * minigameParameters.bonusPointsMax)) * bonusDifficultyMultiplier;
-        return Convert.ToInt32(result);
+        totalBaseScore = Convert.ToInt32(minigameParameters.basePointsForLevel * bonusDifficultyMultiplier);
+        totalBonusScore = Convert.ToInt32((playersReductionPercentage * minigameParameters.bonusPointsMax) * bonusDifficultyMultiplier);
+        return totalBaseScore + totalBonusScore;
     }
     public void LoseGame()
     {
-        if (gameStatus != GameStatus.Lost)
+        if (gameStatus != GameStatus.Lost && gameStatus == GameStatus.Ongoing)
         {
             GetComponent<AudioSource>().Stop();
             gameStatus = GameStatus.Lost;
+            PlayersProgress.listOfPlayedMinigames.Add(SceneManager.GetActiveScene().buildIndex);
             PlayersProgress.lives -= minigameParameters.waterAmountToLose;
             ResetTheTimer();
             PlayersProgress.difficulty -= 1;

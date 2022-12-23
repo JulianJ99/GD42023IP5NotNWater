@@ -34,7 +34,7 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
         slider = FindObjectOfType<Slider>();
-        if (slider != null && maxTime != -1)
+        if (slider != null && maxTime != -1 && gameManagement.gameStatus == GameStatus.Ongoing)
         {
             UpdateTimer();
         }
