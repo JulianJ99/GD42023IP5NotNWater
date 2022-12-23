@@ -93,7 +93,7 @@ public class ShowerTimer : MonoBehaviour
         showertimer = timeToCompleteLevel - currentTimer.ElapsedMilliseconds;
 
         //If the screen's touched, the shower curtains will open, "ending" the game
-        if (isTouched)
+        if (isTouched && currentTimer.IsRunning)
         {
             keepTiming = false;
             canvas.GetComponent<Image>().sprite = GAMEEND;

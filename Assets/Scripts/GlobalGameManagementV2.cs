@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,14 +14,17 @@ public class GlobalGameManagementV2 : MonoBehaviour
     [SerializeField] TextMeshProUGUI pointsWon;
     [SerializeField] TextMeshProUGUI funFactText;
     [SerializeField] TextMeshProUGUI minigameName;
+    [SerializeField] TextMeshProUGUI finalScore;
     [SerializeField] TextMeshProUGUI minigameDescription;
+   
+    GameObject encourageScreen;
     List<int> scenesWithMinigames = new List<int>()
     {
        1, 2, 3, 4
     };
     public float livesAtTheBeginning;
     private bool funFactGenerated = false;
-
+    private bool encouragingScreenActivated = false;
     public bool alive;
 
 
@@ -31,16 +33,24 @@ public class GlobalGameManagementV2 : MonoBehaviour
     {
         Microphone.Start(Microphone.devices[0], false, 1, 1);
         Microphone.End(Microphone.devices[0]);
-        DontDestroyOnLoad(this);
+        if (FindObjectsOfType<GlobalGameManagementV2>().Length > 1)
+        {
+            Destroy(FindObjectsOfType<GlobalGameManagementV2>()[0]);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+       
     }
 
     public void Start()
     {
-
+        encourageScreen = GetUIPartByKeyPhrase("pre_win");
         PlayersProgress.lives = livesAtTheBeginning;
         lives.text = "Lives: " + PlayersProgress.lives;
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
-        score.text = 0 + " points";
+        score.text = "0 plants";
     }
     public void Update()
     {
@@ -49,14 +59,16 @@ public class GlobalGameManagementV2 : MonoBehaviour
         {
                 if (currentManagingClass.gameStatus == GameStatus.Won)
                 {
-
-                ActivatePartOfTheUI("win_screen");
-                pointsWon.text = "+" + currentManagingClass.scoreForTheGame + " points";
-                if (!funFactGenerated)
+                if (DisplayEncourageScreen())
                 {
-                    funFactText.text = GenerateTheFunFact();
+                    GetUIPartByKeyPhrase("win_screen").GetComponent<PointsScreenManagement>().pointsToAdd = currentManagingClass.totalBaseScore + currentManagingClass.totalBonusScore;
+                    if (!funFactGenerated)
+                    {
+                        funFactText.text = GenerateTheFunFact();
+                    }
+                    ActivatePartOfTheUI("win_screen");
+            
                 }
-                Time.timeScale = 0;
                 }
                 else if (currentManagingClass.gameStatus == GameStatus.Paused)
                 {
@@ -72,6 +84,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
                     }
                     else
                     {
+                    finalScore.text = PlayersProgress.totalScore.ToString();
                     Time.timeScale = 0;
                     ActivatePartOfTheUI("lose_screen");
                     }
@@ -87,6 +100,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 }
                 else if (currentManagingClass.gameStatus == GameStatus.Not_Started)
             {
+                encouragingScreenActivated = false;
                 funFactGenerated = false;
                 minigameName.text = currentManagingClass.minigameParameters.minigameName;
                 minigameDescription.text = currentManagingClass.minigameParameters.minigameDescription;
@@ -99,7 +113,34 @@ public class GlobalGameManagementV2 : MonoBehaviour
           //Debug.Log("Error! Current Game Manager cannot be found. Please restart the game");
         }
     }
-
+    public bool DisplayEncourageScreen()
+    {
+        if (encourageScreen != null)
+        {
+            if (!encourageScreen.activeSelf && !encouragingScreenActivated)
+            {
+                ActivatePartOfTheUI("pre_win");
+                encouragingScreenActivated = true;
+                return false;
+            }
+            else if (encouragingScreenActivated && !encourageScreen.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public GameObject GetUIPartByKeyPhrase(string keyphrase)
+    {
+        foreach (ConstantGameObj gameObject in Resources.FindObjectsOfTypeAll(typeof(ConstantGameObj)))
+        {
+            if (gameObject.CheckTheName(keyphrase))
+            {
+                return gameObject.gameObject;
+                    }
+        }
+            return null;
+    }
     public void PauseTheGame()
     {
         ActivatePartOfTheUI("pause");
@@ -116,7 +157,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
         return "Did you know that the fact manager is not working right now?";
     }
 
-    private void ActivatePartOfTheUI(string keyphrase)
+    public void ActivatePartOfTheUI(string keyphrase)
     {
         foreach (ConstantGameObj gameObject in Resources.FindObjectsOfTypeAll(typeof(ConstantGameObj)))
         {
@@ -154,9 +195,8 @@ public class GlobalGameManagementV2 : MonoBehaviour
             PlayersProgress.listOfPlayedMinigames = new List<int>();
         }
         int nextGameToLoad = gamesToPickFrom[UnityEngine.Random.Range(0, gamesToPickFrom.Count)];
-        PlayersProgress.listOfPlayedMinigames.Add(nextGameToLoad);
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
-        score.text = PlayersProgress.totalScore + " points"; 
+        score.text = PlayersProgress.totalScore.ToString() + " plants";
         SceneManager.LoadScene(nextGameToLoad);
         return true;
     }

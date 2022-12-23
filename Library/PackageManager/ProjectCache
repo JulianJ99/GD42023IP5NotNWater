@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638073062453471600
+      ticks: 638073091395973942
     m_Hash: 2867799823
   m_LockFileStatus:
     m_FilePath: C:/Users/tkaty/Documents/GitHub/GD4_2021_IP5NotNWater/Packages/packages-lock.json
@@ -13,14 +13,14 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638073060764728659
+      ticks: 638073091395983958
     m_Hash: 1362923347
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: C:/Users/tkaty/Documents/GitHub/GD4_2021_IP5NotNWater/Packages
-m_EditorVersion: 2021.3.9f1 (ad3870b89536)
+m_EditorVersion: 2021.3.8f1 (b30333d56e81)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@7.0.6
   testable: 0
@@ -787,6 +787,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
+    - 1.17.1
     - 1.17.2
     - 1.17.6
     - 1.17.7
@@ -845,7 +846,7 @@ m_ResolvedPackages:
     revision: 14d129dcc778f8ea2fdf9d0240b47924e4f0dbb1
     path: 
   unityLifecycle:
-    version: 1.17.2
+    version: 1.17.1
     nextVersion: 
 - packageId: com.unity.ide.rider@3.0.15
   testable: 0

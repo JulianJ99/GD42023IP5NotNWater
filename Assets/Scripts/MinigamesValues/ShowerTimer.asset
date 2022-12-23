@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 8
   basePointsForLevel: 5
-  bonusPointsMax: 5
+  bonusPointsMax: 3
   minigameName: Shower timer
-  minimumTimeThreshold: 4
+  minimumTimeThreshold: 3.5
   gameScenarios: 0
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 0}
   minigameDescription: Tap on the screen on the right time to finish showering
-  waterAmountToLose: 2
+  waterAmountToLose: 3
