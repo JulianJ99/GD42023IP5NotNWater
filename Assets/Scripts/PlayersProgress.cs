@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class PlayersProgress {
-    public static int totalScore = 0;
+    public static int totalScore = 200;
     public static int difficulty = 0;
     public static float lives = 10;
     public static List<int> listOfPlayedMinigames = new List<int>();
