@@ -29,12 +29,53 @@ public class BubbleManager : MonoBehaviour
     public float bubbleVolume = 0;
     float volumeDecreasingTimerInSeconds = 0f;
     float volumeDecreasingThreshholdInSeconds = 0.4f;
+
+    public static BubbleManager instance;
+
+    //skins
+    bool woodenBackgroundSelected, mountainsBackgroundSelected, cityBackgroundSelected;
+    public GameObject woodenBackground, mountainsBackground, cityBackground;
     private void Start()
     {
+        woodenBackgroundSelected = SkinSelection.woodenBackgroundSelected;
+        mountainsBackgroundSelected = SkinSelection.mountainsBackgroundSelected;
+        cityBackgroundSelected = SkinSelection.cityBackgroundSelected;
+
+        if (woodenBackgroundSelected == true)
+        {
+            woodenBackground.SetActive(true);
+            mountainsBackground.SetActive(false);
+            cityBackground.SetActive(false);
+        } else if (mountainsBackgroundSelected == true)
+        {
+            woodenBackground.SetActive(false);
+            mountainsBackground.SetActive(true);
+            cityBackground.SetActive(false);
+        } else if (cityBackgroundSelected == true)
+        {
+            woodenBackground.SetActive(false);
+            mountainsBackground.SetActive(false);
+            cityBackground.SetActive(true);
+        } else 
+        {
+            woodenBackground.SetActive(true);
+            mountainsBackground.SetActive(false);
+            cityBackground.SetActive(false);
+        }
+        
         localGameManager = FindObjectOfType<GameManagementV2>();
         SpawnBubbles(bubbleCount);
         difficulty = GlobalGameManager.Instance.difficulty;
     }
+
+    private void Awake() {
+        if (instance != null)
+        {
+            return;
+        } else {
+            instance = this;
+        }
+   }
 
     void Update()
     {
@@ -61,6 +102,8 @@ public class BubbleManager : MonoBehaviour
             localGameManager.WinGame();
         }
     }
+
+
 
     void MoveBubbles()
     {

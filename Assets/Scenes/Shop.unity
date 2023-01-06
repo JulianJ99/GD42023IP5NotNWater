@@ -1042,9 +1042,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin1
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectRoseCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1214,7 +1214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 239899594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyCityBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &239899594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,7 +1387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 277488306}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyWoodenBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &277488306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1836,9 +1860,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin5
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuySilverToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2229,9 +2253,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin4
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectUsualToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2448,6 +2472,7 @@ GameObject:
   - component: {fileID: 449760545}
   - component: {fileID: 449760547}
   - component: {fileID: 449760546}
+  - component: {fileID: 449760548}
   m_Layer: 5
   m_Name: Shower Timer shop
   m_TagString: Untagged
@@ -2518,6 +2543,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449760544}
   m_CullTransparentMesh: 1
+--- !u!114 &449760548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449760544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c041a4a0698244588932961c026a93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSkinVisualRoseCurtains: {fileID: 189618122}
+  selectSkinVisualFootballCurtains: {fileID: 1405507358}
+  selectSkinVisualUkrainianCurtains: {fileID: 1202694542}
+  selectSkinRoseCurtains: {fileID: 189618124}
+  selectSkinFootballCurtains: {fileID: 1405507360}
+  selectSkinUkrainianCurtains: {fileID: 1202694544}
+  equipTextRoseCurtains: {fileID: 1814142328}
+  equipTextFootballCurtains: {fileID: 1198709917}
+  equipTextUkrainianCurtains: {fileID: 2068404050}
+  priceTextRoseCurtains: {fileID: 29353105}
+  priceTextFootballCurtains: {fileID: 1741907927}
+  priceTextUkrainianCurtains: {fileID: 1930104571}
+  buySkinRoseCurtains: {fileID: 1952163820}
+  buySkinFootballCurtains: {fileID: 1898932984}
+  buySkinUkrainianCurtains: {fileID: 1459379114}
 --- !u!1 &471783009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,9 +2655,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin2
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyPurpleDuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2986,9 +3038,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin6
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectGoldToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3342,9 +3394,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin3
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyDuckWithGlasses
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3951,9 +4003,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin1
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyUsualDuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4150,6 +4202,7 @@ GameObject:
   - component: {fileID: 787138241}
   - component: {fileID: 787138245}
   - component: {fileID: 787138246}
+  - component: {fileID: 787138247}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4270,6 +4323,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e59b7af9c2255a40ba65bd5d77045a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &787138247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787138240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb11a06254e54c499d51c63b4b1a5f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788792712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,7 +4418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 788792715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectMountainsBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &788792715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4838,9 +4915,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin6
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyGoldToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5457,9 +5534,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin3
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectDuckWithGlasses
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5518,6 +5595,7 @@ GameObject:
   - component: {fileID: 1067148190}
   - component: {fileID: 1067148192}
   - component: {fileID: 1067148191}
+  - component: {fileID: 1067148193}
   m_Layer: 5
   m_Name: Pick Duck shop
   m_TagString: Untagged
@@ -5588,6 +5666,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067148189}
   m_CullTransparentMesh: 1
+--- !u!114 &1067148193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067148189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8d3f865843541909b076fb24caa775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSkinVisualUsualDuck: {fileID: 1174377564}
+  selectSkinVisualPurpleDuck: {fileID: 1328446123}
+  selectSkinVisualDuckWithGlasses: {fileID: 1049543772}
+  selectSkinUsualDuck: {fileID: 1174377566}
+  selectSkinPurpleDuck: {fileID: 1328446125}
+  selectSkinDuckWithGlasses: {fileID: 1049543774}
+  equipTextUsualDuck: {fileID: 1680933597}
+  equipTextPurpleDuck: {fileID: 311799453}
+  equipTextDuckWithGlasses: {fileID: 545207788}
+  priceTextUsualDuck: {fileID: 792264542}
+  priceTextPurpleDuck: {fileID: 114843279}
+  priceTextDuckWithGlasses: {fileID: 2135950970}
+  buySkinUsualDuck: {fileID: 732029306}
+  buySkinPurpleDuck: {fileID: 471783011}
+  buySkinDuckWithGlasses: {fileID: 636324419}
 --- !u!1 &1077991872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,9 +6004,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin4
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyUsualToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6389,9 +6494,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin1
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectUsualDuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6880,9 +6985,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin3
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectUkrainianCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7228,9 +7333,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin5
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectSilverToilet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7442,9 +7547,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin2
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectPurpleDuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7576,9 +7681,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: EquipSkin2
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectFootballCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7884,9 +7989,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin3
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyUkrainianCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8017,7 +8122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1492840931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectCityBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1492840931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8207,7 +8324,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1515766252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: SelectWoodenBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1515766252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8330,7 +8459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1539626499}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyMountainsBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1539626499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8764,6 +8905,7 @@ GameObject:
   - component: {fileID: 1784573069}
   - component: {fileID: 1784573071}
   - component: {fileID: 1784573070}
+  - component: {fileID: 1784573072}
   m_Layer: 5
   m_Name: Bubbles shop
   m_TagString: Untagged
@@ -8834,6 +8976,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784573068}
   m_CullTransparentMesh: 1
+--- !u!114 &1784573072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784573068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539e3dff85a0e4166980f017e73e2c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSkinVisualWoodenBack: {fileID: 1515766249}
+  selectSkinVisualMountainBack: {fileID: 788792712}
+  selectSkinVisualCityBack: {fileID: 1492840928}
+  selectSkinWoodenBack: {fileID: 1515766251}
+  selectSkinMountainBack: {fileID: 788792714}
+  selectSkinCityBack: {fileID: 1492840930}
+  equipTextWoodenBack: {fileID: 1924241270}
+  equipTextMountainBack: {fileID: 1458516452}
+  equipTextCityBack: {fileID: 750355696}
+  priceTextWoodenBack: {fileID: 668039286}
+  priceTextMountainBack: {fileID: 1161586950}
+  priceTextCityBack: {fileID: 2118465908}
+  buySkinWoodenBack: {fileID: 277488305}
+  buySkinMountainBack: {fileID: 1539626498}
+  buySkinCityBack: {fileID: 239899593}
 --- !u!1 &1792002503
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,6 +9305,7 @@ GameObject:
   - component: {fileID: 1853893250}
   - component: {fileID: 1853893252}
   - component: {fileID: 1853893251}
+  - component: {fileID: 1853893253}
   m_Layer: 5
   m_Name: Soap Balancing shop
   m_TagString: Untagged
@@ -9206,6 +9376,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853893249}
   m_CullTransparentMesh: 1
+--- !u!114 &1853893253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853893249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f6823731c9a48ceadc239bb6c6aa24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSkinVisualUsualToilet: {fileID: 365946215}
+  selectSkinVisualSilverToilet: {fileID: 1287009050}
+  selectSkinVisualGoldToilet: {fileID: 591587225}
+  selectSkinUsualToilet: {fileID: 365946217}
+  selectSkinSilverToilet: {fileID: 1287009052}
+  selectSkinGoldToilet: {fileID: 591587227}
+  equipTextUsualToilet: {fileID: 978438402}
+  equipTextSilverToilet: {fileID: 2114511063}
+  equipTextGoldToilet: {fileID: 2125547633}
+  priceTextUsualToilet: {fileID: 964390579}
+  priceTextSilverToilet: {fileID: 1016925064}
+  priceTextGoldToilet: {fileID: 2128640738}
+  buySkinUsualToilet: {fileID: 1118738150}
+  buySkinSilverToilet: {fileID: 328724976}
+  buySkinGoldToilet: {fileID: 931723890}
 --- !u!1 &1857217547
 GameObject:
   m_ObjectHideFlags: 0
@@ -9264,7 +9461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1368769117, guid: 5d0a2c29d3bf14b04923ec0d4badc857, type: 3}
+  m_Sprite: {fileID: 1673381099, guid: 5d0a2c29d3bf14b04923ec0d4badc857, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9481,9 +9678,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin2
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyFootballCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10046,9 +10243,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8947793489883121923}
-        m_TargetAssemblyTypeName: ShopSection, Assembly-CSharp
-        m_MethodName: BuySkin1
+      - m_Target: {fileID: 787138247}
+        m_TargetAssemblyTypeName: SkinSelection, Assembly-CSharp
+        m_MethodName: BuyRoseCurtains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11357,37 +11554,33 @@ PrefabInstance:
       value: ShopGlobalManager
       objectReference: {fileID: 0}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.size
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: bubbleManager
+      value: 
+      objectReference: {fileID: 5634073565823927141, guid: e465563e818ad4d9fb74151b470cdea2, type: 3}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.size
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[0].buySkin
+      value: 
+      objectReference: {fileID: 277488305}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].cost
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[1].buySkin
+      value: 
+      objectReference: {fileID: 1539626498}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].name
-      value: Bronze toilet
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[2].buySkin
+      value: 
+      objectReference: {fileID: 239899593}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].cost
-      value: 75
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[0].costText
+      value: 
+      objectReference: {fileID: 668039286}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].name
-      value: Silver toilet
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[1].costText
+      value: 
+      objectReference: {fileID: 1161586950}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].cost
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].name
-      value: Gold toilet
-      objectReference: {fileID: 0}
+      propertyPath: bubblesSkins.Array.data[2].costText
+      value: 
+      objectReference: {fileID: 2118465908}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[0].buySkin
       value: 
@@ -11401,21 +11594,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 636324419}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].buySkin
+      propertyPath: bubblesSkins.Array.data[0].equipSkin
       value: 
-      objectReference: {fileID: 1118738150}
+      objectReference: {fileID: 1515766251}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].equiped
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].buySkin
+      propertyPath: bubblesSkins.Array.data[1].equipSkin
       value: 
-      objectReference: {fileID: 328724976}
+      objectReference: {fileID: 788792714}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].buySkin
+      propertyPath: bubblesSkins.Array.data[2].equipSkin
       value: 
-      objectReference: {fileID: 931723890}
+      objectReference: {fileID: 1492840930}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[0].costText
       value: 
@@ -11429,18 +11618,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2135950970}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].costText
-      value: 
-      objectReference: {fileID: 964390579}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].costText
-      value: 
-      objectReference: {fileID: 1016925064}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].costText
-      value: 
-      objectReference: {fileID: 2128640738}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[0].equipSkin
       value: 
       objectReference: {fileID: 1174377566}
@@ -11449,45 +11626,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1328446125}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
+      propertyPath: miniGameSkins.Array.data[1].purchased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[2].equipSkin
       value: 
       objectReference: {fileID: 1049543774}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].equipSkin
+      propertyPath: bubblesSkins.Array.data[0].equipedText
       value: 
-      objectReference: {fileID: 365946217}
+      objectReference: {fileID: 1924241270}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].purchased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].equipSkin
+      propertyPath: bubblesSkins.Array.data[1].equipedText
       value: 
-      objectReference: {fileID: 1287009052}
+      objectReference: {fileID: 1458516452}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].equipSkin
+      propertyPath: bubblesSkins.Array.data[2].equipedText
       value: 
-      objectReference: {fileID: 591587227}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].name
-      value: Bronze toilet
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].cost
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].name
-      value: Silver toilet
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].cost
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].name
-      value: Gold toilet
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 750355696}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[0].equipedText
       value: 
@@ -11501,73 +11658,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 545207788}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].equipedText
+      propertyPath: bubblesSkins.Array.data[0].equipSkinVisual
       value: 
-      objectReference: {fileID: 978438402}
+      objectReference: {fileID: 1515766249}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].spriteImage
+      propertyPath: bubblesSkins.Array.data[1].equipSkinVisual
       value: 
-      objectReference: {fileID: 21300000, guid: 7a8c1f4a911ff4b79b730a0f5bd24703, type: 3}
+      objectReference: {fileID: 788792712}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].equipedText
+      propertyPath: bubblesSkins.Array.data[2].equipSkinVisual
       value: 
-      objectReference: {fileID: 2114511063}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].spriteImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 85703dddd113947bdaba028efcebd1fd, type: 3}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].equipedText
-      value: 
-      objectReference: {fileID: 2125547633}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].spriteImage
-      value: 
-      objectReference: {fileID: 21300000, guid: f69b25e7a66824966b7ea0563abcbf87, type: 3}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].buySkin
-      value: 
-      objectReference: {fileID: 1118738150}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].equiped
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].buySkin
-      value: 
-      objectReference: {fileID: 328724976}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].buySkin
-      value: 
-      objectReference: {fileID: 931723890}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].costText
-      value: 
-      objectReference: {fileID: 964390579}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].costText
-      value: 
-      objectReference: {fileID: 1016925064}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].costText
-      value: 
-      objectReference: {fileID: 2128640738}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].equipSkin
-      value: 
-      objectReference: {fileID: 365946217}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].purchased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].equipSkin
-      value: 
-      objectReference: {fileID: 1287009052}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].equipSkin
-      value: 
-      objectReference: {fileID: 591587227}
+      objectReference: {fileID: 1492840928}
     - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
       propertyPath: miniGameSkins.Array.data[0].equipSkinVisual
       value: 
@@ -11580,64 +11681,7 @@ PrefabInstance:
       propertyPath: miniGameSkins.Array.data[2].equipSkinVisual
       value: 
       objectReference: {fileID: 1049543772}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[3].equipSkinVisual
-      value: 
-      objectReference: {fileID: 365946215}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[4].equipSkinVisual
-      value: 
-      objectReference: {fileID: 1287009050}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: miniGameSkins.Array.data[5].equipSkinVisual
-      value: 
-      objectReference: {fileID: 591587225}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].equipedText
-      value: 
-      objectReference: {fileID: 978438402}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].spriteImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 252b6e417e3034a3394eebf83c0df034, type: 3}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].equipedText
-      value: 
-      objectReference: {fileID: 2114511063}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].spriteImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 2f39efb1be01145c499c8c47da7ff89f, type: 3}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].equipedText
-      value: 
-      objectReference: {fileID: 2125547633}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].spriteImage
-      value: 
-      objectReference: {fileID: 21300000, guid: 97d51cd4baba84a789e6bffaa21ab502, type: 3}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[0].equipSkinVisual
-      value: 
-      objectReference: {fileID: 365946215}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[1].equipSkinVisual
-      value: 
-      objectReference: {fileID: 1287009050}
-    - target: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-      propertyPath: soapBalancingskins.Array.data[2].equipSkinVisual
-      value: 
-      objectReference: {fileID: 591587225}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2935956364155425025, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
+    - {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
---- !u!114 &8947793489883121923 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6697493542134860615, guid: 71f281dd81bc0486d9c1b12407fb96b4, type: 3}
-  m_PrefabInstance: {fileID: 8947793489883121922}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6676904c8a1f24500b85026f94756503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

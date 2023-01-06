@@ -29,6 +29,39 @@ public class BalancingScript : MonoBehaviour
 
     GameManagementV2 localManager;
 
+    //skins
+    bool usualToiletSelected, silverToiletSelected, goldToiletSelected;
+    public GameObject usualToilet, silverToilet, goldToilet;
+
+    private void Start()
+    {
+        usualToiletSelected = SkinSelection.usualToiletSelected;
+        silverToiletSelected = SkinSelection.silverToiletSelected;
+        goldToiletSelected = SkinSelection.goldToiletSelected;
+
+        if (usualToiletSelected == true)
+        {
+            usualToilet.SetActive(true);
+            silverToilet.SetActive(false);
+            goldToilet.SetActive(false);
+        } else if (silverToiletSelected == true)
+        {
+            usualToilet.SetActive(false);
+            silverToilet.SetActive(true);
+            goldToilet.SetActive(false);
+        } else if (goldToiletSelected == true)
+        {
+            usualToilet.SetActive(false);
+            silverToilet.SetActive(false);
+            goldToilet.SetActive(true);
+        } else 
+        {
+            usualToilet.SetActive(true);
+            silverToilet.SetActive(false);
+            goldToilet.SetActive(false);
+        }
+    }
+
     private void Awake()
     {
         controlMaster = new SoapBalancingControlMaster();
