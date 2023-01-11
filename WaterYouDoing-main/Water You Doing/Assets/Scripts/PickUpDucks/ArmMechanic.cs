@@ -31,8 +31,9 @@ public class ArmMechanic : MonoBehaviour
 
     private TouchController controls;
     bool isFirstTouch = true;
-    bool TouchLock;
 
+
+    
     private void Awake()
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
@@ -54,7 +55,6 @@ public class ArmMechanic : MonoBehaviour
     void Start()
     {
         difficulty = GlobalGameManager.Instance.difficulty;
-        TouchLock = false;
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         this.h_endPoint = this.GetRelativeEndpoint();
     }
@@ -62,61 +62,15 @@ public class ArmMechanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(TouchLock);
+
         //Is er gedrukt op het scherm, laat dan object verticaal gaan
-        if(TouchLock == false){
+        
+
+
             if (isTouched)
                 {
-                    TouchLock = true;
-                //Moet het object naar beneden toe
-                if (this.moveTowardsVerticalEndPoint)
-                {
-                    //Is object niet op verticaal eindpunt, breng dan object verder naar beneden
-                    if (!this.ObjectIsAtVerticalEndPoint())
-                    {
-                        horizontalMove = false;
-                        this.MoveObjectTowardsVerticalEndPoint();
-                        this.IncreaseV_InterpolateValue();
-                        
-                    }
-                    //Object is bij eindpunt en reset alles waardoor object weer naar boven kan
-                    else
-                    {
-                        this.moveTowardsVerticalEndPoint = false;
-                        this.ResetV_InterpolateValue();
-                        TouchLock = false;
-                    }
+                    TouchStop();
                 }
-                //Object moet naar boven toe
-                else
-                {
-                    //Is object niet op verticaal startpunt, breng dan object verder naar boven
-                    if (!this.ObjectIsAtVerticalStartPoint())
-                    {
-                        this.MoveObjectTowardsVerticalStartPoint();
-                        this.IncreaseV_InterpolateValue();
-                    }
-                    //Object is bij startpunt en reset alles waardoor object weer horizontaal kan gaan
-                    else
-                    {
-                        Debug.Log(isSoapPickedUp);
-                        if (isSoapPickedUp)
-                        {
-                            GetComponent<SpriteRenderer>().sprite = open;
-                            this.ResetBools();
-                            this.ResetV_InterpolateValue();
-                        }
-                        else
-                        {
-                            this.ResetBools();
-                            this.ResetV_InterpolateValue();
-                            //gameManagement.GetComponent<GameManagement>().LoseGame();                       //Game over screen
-                            GlobalGameManager.Instance.LoseGame();
-                        }
-                    }
-                }
-            }
-        }
         
         if (horizontalMove)
         {
@@ -148,8 +102,81 @@ public class ArmMechanic : MonoBehaviour
                 }
             }
         }
+        
+        if(this.transform.position.y <= -1){
+            Debug.Log("below 0!");
+            if (isSoapPickedUp)
+            {
+            GetComponent<SpriteRenderer>().sprite = open;
+            this.ResetBools();
+            this.ResetV_InterpolateValue();
+            }
+            else
+            {
+            this.ResetBools();
+            this.ResetV_InterpolateValue();
+            //gameManagement.GetComponent<GameManagement>().LoseGame(); //Game over screen
+            GlobalGameManager.Instance.LoseGame();
+            }
+        }
     }
 
+
+    public void TouchStop(){
+        
+                //Moet het object naar beneden toe
+                if (this.moveTowardsVerticalEndPoint)
+                {
+                    //Is object niet op verticaal eindpunt, breng dan object verder naar beneden
+                    if (!this.ObjectIsAtVerticalEndPoint())
+                    {
+                        horizontalMove = false;
+                        this.MoveObjectTowardsVerticalEndPoint();
+                        this.IncreaseV_InterpolateValue();
+                        
+                    }
+                    else if (this.ObjectIsBeyondVerticalEndPoint()){
+                        
+                        this.moveTowardsVerticalEndPoint = false;
+                        this.ResetV_InterpolateValue();
+                    }
+                    //Object is bij eindpunt en reset alles waardoor object weer naar boven kan
+                    else
+                    {
+                        this.moveTowardsVerticalEndPoint = false;
+                        this.ResetV_InterpolateValue();
+                        
+                    }
+                }
+                //Object moet naar boven toe
+                else
+                {
+                    //Is object niet op verticaal startpunt, breng dan object verder naar boven
+                    if (!this.ObjectIsAtVerticalStartPoint())
+                    {
+                        this.MoveObjectTowardsVerticalStartPoint();
+                        this.IncreaseV_InterpolateValue();
+                    }
+                    //Object is bij startpunt en reset alles waardoor object weer horizontaal kan gaan
+                    else
+                    {
+                        Debug.Log(isSoapPickedUp);
+                        if (isSoapPickedUp)
+                        {
+                            GetComponent<SpriteRenderer>().sprite = open;
+                            this.ResetBools();
+                            this.ResetV_InterpolateValue();
+                        }
+                        else
+                        {
+                            this.ResetBools();
+                            this.ResetV_InterpolateValue();
+                            //gameManagement.GetComponent<GameManagement>().LoseGame(); //Game over screen
+                            GlobalGameManager.Instance.LoseGame();
+                        }
+                    }
+                }
+            }
 
     public void ScreenIsTouch(InputAction.CallbackContext context)
     {
@@ -245,6 +272,11 @@ public class ArmMechanic : MonoBehaviour
     private bool ObjectIsAtVerticalEndPoint()
     {
         return this.transform.position == this.endVerticalPosistion;
+    }
+
+    private bool ObjectIsBeyondVerticalEndPoint()
+    {
+        return this.transform.position.y <= this.endVerticalPosistion.y;
     }
 
     //Bereken eindpunt vanuit start positie.
