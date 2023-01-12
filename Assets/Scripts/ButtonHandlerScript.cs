@@ -17,6 +17,8 @@ public class ButtonHandlerScript : MonoBehaviour
         {
             Destroy(gameObject.gameObject);  
         }
+        PlayersProgress.difficulty = 0;
+        PlayersProgress.minigameNr = 0;
         Destroy(FindObjectOfType<GlobalGameManagementV2>().gameObject);
         SceneManager.LoadScene(0);
 

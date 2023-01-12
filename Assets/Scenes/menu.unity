@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainPointsText: {fileID: 574330895}
   countDownText: {fileID: 1941722170}
-  bonusPointsSound: {fileID: 8300000, guid: 4dd586c1b4531bc43888858198faf65f, type: 3}
+  bonusPointsSound: {fileID: 8300000, guid: 1855e954e5c3a10469b93e6d65248cb8, type: 3}
   pointsToAdd: 20
 --- !u!1 &904735515
 GameObject:
@@ -6002,14 +6002,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[0]
-      value: Most shower owners long for a larger shower, as nearly 52% wish their
-        shower had more space
+      value: Cold showers can boost your health and decrease stress
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[1]
-      value: Average showers can use anywhere between 25 and 75 gallons of water,
-        which is considerably more than baths
+      value: Average showers can use 150-300 liters of water, which is considerably
+        more than baths
       objectReference: {fileID: 0}
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[2]
@@ -6023,6 +6026,27 @@ PrefabInstance:
     - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: facts.Array.data[4]
       value: The average shower in America lasts roughly 13 minutes
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.data[5]
+      value: 'An average bath requires 170 liters of water '
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.data[6]
+      value: Too much hot water causes skin dryness by damaging keratin cells
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.data[7]
+      value: Morning cold shower improves your oxygen intake, heart rate and alertness
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.data[8]
+      value: Overly hot showering could lead to increased blood pressure
+      objectReference: {fileID: 0}
+    - target: {fileID: -5026630979679467148, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
+      propertyPath: facts.Array.data[9]
+      value: Taking cold showers 3 times a week could save you up to 3 euros per
+        month
       objectReference: {fileID: 0}
     - target: {fileID: 1382274594, guid: 3732fefce3230884c95f4f49c5b88dcd, type: 3}
       propertyPath: lives
@@ -6769,11 +6793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6487791512436071027, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487791512436071027, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 7946157231699974122, guid: 5d75f47facbc20848b1509fefa0e92b2, type: 3}
       propertyPath: m_Name
@@ -6887,11 +6911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820131502904296475, guid: 9c5b02349abcf34479f5525629f1dfac, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 820131502904296475, guid: 9c5b02349abcf34479f5525629f1dfac, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 1940101735923254282, guid: 9c5b02349abcf34479f5525629f1dfac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6982,11 +7006,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 4dd586c1b4531bc43888858198faf65f, type: 3}
     - target: {fileID: 3677344034091079135, guid: d970727253881c048b69ab696615262e, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3677344034091079135, guid: d970727253881c048b69ab696615262e, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 4237021041173234169, guid: d970727253881c048b69ab696615262e, type: 3}
       propertyPath: m_Pivot.x
@@ -7218,11 +7242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6050361529792847119, guid: 2fd2540078ddba7449315cff65d07953, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6050361529792847119, guid: 2fd2540078ddba7449315cff65d07953, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 7025103898460999423, guid: 2fd2540078ddba7449315cff65d07953, type: 3}
       propertyPath: m_Color.a
@@ -7361,11 +7385,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 131215476908400152, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 131215476908400152, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 131215476908400152, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 2237102263318216173, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
       propertyPath: m_SortingOrder
@@ -7379,7 +7407,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1382274597}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 131215476908400153, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: edad2445b3917be45bdd381ca858e6fc, type: 3}
 --- !u!114 &7449201869143788579 stripped
 MonoBehaviour:
@@ -7516,11 +7545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2953856418991287013, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
       propertyPath: m_ScreenMatchMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2953856418991287013, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
       propertyPath: m_ReferenceResolution.x
-      value: 900
+      value: 775
       objectReference: {fileID: 0}
     - target: {fileID: 3203087945987098748, guid: 618e00933d99fab4891d4c0fc342e534, type: 3}
       propertyPath: m_text

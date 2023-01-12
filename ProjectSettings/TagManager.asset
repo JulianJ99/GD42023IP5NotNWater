@@ -7,6 +7,9 @@ TagManager:
   - gamemanager
   - LivesText
   - ShopGlobalManager
+  - Obstacle
+  - Goal
+  - Ground
   layers:
   - Default
   - TransparentFX

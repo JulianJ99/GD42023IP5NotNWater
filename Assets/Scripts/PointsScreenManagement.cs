@@ -14,7 +14,7 @@ public class PointsScreenManagement : MonoBehaviour
     int alreadyAddedPoints = 0;
     bool hasStartedAnimation = false;
     int timeUntilNextLevel = 5;
-    float maximumTimeForAnimation = 1;
+    float maximumTimeForAnimation = 0.7f;
     AudioSource source;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,7 @@ public class PointsScreenManagement : MonoBehaviour
         {
             StartCoroutine(CountdownCoroutine());
         }
-        else if (timeUntilNextLevel <= 0)
+        else if (timeUntilNextLevel <= 0 && gameObject.activeSelf == true)
         {
             countDownText.text = "(5)";
             GetComponent<ButtonHandlerScript>().PlayNextGame();
@@ -60,7 +60,7 @@ public class PointsScreenManagement : MonoBehaviour
         float finalAmountToWait = timeForAnimation / UnityEngine.Random.Range(maxPointsPerAnimation * 0.9f, maxPointsPerAnimation * 1.05f);
         if (alreadyAddedPoints == 0)
         {
-            finalAmountToWait += 0.4f;
+            finalAmountToWait += 0.2f;
         }
         yield return new WaitForSeconds(finalAmountToWait);
         alreadyAddedPoints++;
@@ -71,7 +71,7 @@ public class PointsScreenManagement : MonoBehaviour
     IEnumerator CountdownCoroutine()
     {
         countdownStarted = true;
-        yield return new WaitForSeconds(1.03f);
+        yield return new WaitForSeconds(1.06f);
         timeUntilNextLevel--;
         countDownText.text = "(" + timeUntilNextLevel + ")";
         countdownStarted = false;

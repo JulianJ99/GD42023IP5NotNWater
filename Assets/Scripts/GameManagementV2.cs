@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class GameManagementV2 : MonoBehaviour
 {
-    public int totalBaseScore = 0;
-    public int totalBonusScore = 0;
+    public float totalBaseScore = 0;
+    public float totalBonusScore = 0;
     public float calculatedTimeForLvl = 1000;
     public Stopwatch levelTimer = new Stopwatch();
     public MinigameValuesTemplate minigameParameters;
@@ -88,7 +88,7 @@ public class GameManagementV2 : MonoBehaviour
         float bonusDifficultyMultiplier = 1 + (PlayersProgress.difficulty / 12);
         totalBaseScore = Convert.ToInt32(minigameParameters.basePointsForLevel * bonusDifficultyMultiplier);
         totalBonusScore = Convert.ToInt32((playersReductionPercentage * minigameParameters.bonusPointsMax) * bonusDifficultyMultiplier);
-        return totalBaseScore + totalBonusScore;
+        return Convert.ToInt32(totalBaseScore + totalBonusScore);
     }
     public void LoseGame()
     {

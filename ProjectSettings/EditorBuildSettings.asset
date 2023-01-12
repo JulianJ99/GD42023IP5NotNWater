@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/tips.unity
     guid: 5a4ed51ccef7f49dc8db25d3cbe87cc2
   - enabled: 1
+    path: Assets/Scenes/ShowerEvasion.unity
+    guid: 4cf394dab4778f84f93dfa87c1617e68
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: d70f6a7dcd7f94d89b73af8875cc38d1
   m_configObjects: {}

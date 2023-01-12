@@ -20,7 +20,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
     GameObject encourageScreen;
     List<int> scenesWithMinigames = new List<int>()
     {
-       1, 2, 3, 4
+        7
     };
     public float livesAtTheBeginning;
     private bool funFactGenerated = false;
@@ -61,7 +61,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
                 {
                 if (DisplayEncourageScreen())
                 {
-                    GetUIPartByKeyPhrase("win_screen").GetComponent<PointsScreenManagement>().pointsToAdd = currentManagingClass.totalBaseScore + currentManagingClass.totalBonusScore;
+                    GetUIPartByKeyPhrase("win_screen").GetComponent<PointsScreenManagement>().pointsToAdd = Convert.ToInt32(currentManagingClass.totalBaseScore + currentManagingClass.totalBonusScore);
                     if (!funFactGenerated)
                     {
                         funFactText.text = GenerateTheFunFact();
@@ -190,7 +190,10 @@ public class GlobalGameManagementV2 : MonoBehaviour
         }
         if (gamesToPickFrom.Count <= 0)
         {
-            PlayersProgress.listOfPlayedMinigames.Remove(SceneManager.GetActiveScene().buildIndex);
+            if (PlayersProgress.listOfPlayedMinigames.Count > 1)
+            {
+                PlayersProgress.listOfPlayedMinigames.Remove(SceneManager.GetActiveScene().buildIndex);
+            }
             gamesToPickFrom = PlayersProgress.listOfPlayedMinigames;
             PlayersProgress.listOfPlayedMinigames = new List<int>();
         }

@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b90a2e39c122144b03bce3fac2662e, type: 3}
-  m_Name: ShowerTimer
+  m_Name: ShowerRush
   m_EditorClassIdentifier: 
-  timeToCompleteLevel: 8
-  basePointsForLevel: 5
-  bonusPointsMax: 3
-  minigameName: Shower timer
-  minimumTimeThreshold: 3.5
+  timeToCompleteLevel: 12
+  basePointsForLevel: 6
+  bonusPointsMax: 10
+  minigameName: Shower Rush
+  minimumTimeThreshold: 12
   gameScenarios: 0
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 8300000, guid: 3862653b8b8097248ba1f50d845b7eb5, type: 3}
-  minigameDescription: Tap on the screen on the right time to finish showering
-  waterAmountToLose: 3
+  minigameDescription: Navigate using WASD, and rush to the shower to close it before
+    it's too late!
+  waterAmountToLose: 1
