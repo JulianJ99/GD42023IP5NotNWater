@@ -38,8 +38,14 @@ public class PipeConnectorManger : MonoBehaviour
             PipesHolder.SetActive(false);
             Shower.SetActive(true);
             ShowerNoWater.SetActive(false);
-            localManager.WinGame();
+            StartCoroutine(WaitForWinScreen());
         }
+    }
+
+    public IEnumerator WaitForWinScreen()
+    {
+        yield return new WaitForSeconds(1.12f);
+        localManager.WinGame();
     }
 
     public void WrongMove()
