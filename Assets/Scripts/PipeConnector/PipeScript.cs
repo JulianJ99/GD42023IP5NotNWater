@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PipeScript : MonoBehaviour
 {
-    float[] rotations = {0, 90, 180, 270};
+    float[] rotations = {0, 90, 270}; //weird error: when rotating on 180, sometimes doesnt count as correctly rotated when it is so
     [SerializeField]
     bool placedCorrectly = false;
     public float[] correctRotations;

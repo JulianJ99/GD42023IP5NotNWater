@@ -20,7 +20,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
     GameObject encourageScreen;
     List<int> scenesWithMinigames = new List<int>()
     {
-       1, 2, 3, 4
+       1, 2, 3, 4, 5
     };
     public float livesAtTheBeginning;
     private bool funFactGenerated = false;
