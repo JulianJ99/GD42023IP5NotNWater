@@ -76,8 +76,40 @@ MonoBehaviour:
     buySkin: {fileID: 0}
     equipSkinVisual: {fileID: 0}
     equipSkin: {fileID: 0}
-  modifiedSkins: []
+  soapBalancingSkins: []
+  bubblesSkins:
+  - name: Wooden background
+    cost: 0
+    spriteImage: {fileID: -303512293, guid: 2c2d65800edcd344bb5d0f703a1f2f90, type: 3}
+    equiped: 1
+    purchased: 1
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
+  - name: Mountain background
+    cost: 80
+    spriteImage: {fileID: -1811532825, guid: 16e29358e90ee4dcf9a35589f8faa71e, type: 3}
+    equiped: 0
+    purchased: 0
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
+  - name: City background
+    cost: 120
+    spriteImage: {fileID: 1673381099, guid: 5d0a2c29d3bf14b04923ec0d4badc857, type: 3}
+    equiped: 0
+    purchased: 0
+    equipedText: {fileID: 0}
+    costText: {fileID: 0}
+    buySkin: {fileID: 0}
+    equipSkinVisual: {fileID: 0}
+    equipSkin: {fileID: 0}
   skinChanger: {fileID: 2935956364155425025}
+  bubbleManager: {fileID: 0}
 --- !u!114 &2935956364155425025
 MonoBehaviour:
   m_ObjectHideFlags: 0

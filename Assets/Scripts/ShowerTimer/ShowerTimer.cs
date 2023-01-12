@@ -36,7 +36,12 @@ public class ShowerTimer : MonoBehaviour
     GameManagementV2 localManager;
   
     private TouchController controls;
-    public Sprite GAMESTART, FOG1, FOG2, GAMEEND; 
+    public Sprite GAMESTART, FOG1, FOG2, GAMEEND;
+    //skins
+    bool roseCurtainsSelected, footballCurtaisSelected, ukrainianCurtainsSelected;
+    public GameObject roseCurtains, footballCurtains, ukrainianCurtains;
+    public Sprite GAMESTARTSkin1, FOG1Skin1, FOG2Skin1, GAMEENDSkin1;
+    public Sprite GAMESTARTSkin2, FOG1Skin2, FOG2Skin2, GAMEENDSkin2;
 
     bool isFirstTouch = true;
     public bool keepTiming = true;
@@ -46,10 +51,32 @@ public class ShowerTimer : MonoBehaviour
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        Sprite GAMESTART =  Resources.Load<Sprite>("showertimerbgclosed");  
-        Sprite FOG1 = Resources.Load<Sprite>("showertimerbgclosed1");    
-        Sprite FOG2 = Resources.Load<Sprite>("showertimerbgclosed2");  
-        Sprite GAMEEND = Resources.Load<Sprite>("showertimerbg");
+
+        if (roseCurtainsSelected == true)
+        {
+            Sprite GAMESTART = Resources.Load<Sprite>("showertimerbgclosed");  
+            Sprite FOG1 = Resources.Load<Sprite>("showertimerbgclosed1");    
+            Sprite FOG2 = Resources.Load<Sprite>("showertimerbgclosed2");  
+            Sprite GAMEEND = Resources.Load<Sprite>("showertimerbg");
+        } else if (footballCurtaisSelected == true)
+        {
+            Sprite GAMESTARTSkin1 = Resources.Load<Sprite>("opencurtainsfootball");  
+            Sprite FOG1Skin1 = Resources.Load<Sprite>("opencurtainsfootballfog1");    
+            Sprite FOG2Skin1 = Resources.Load<Sprite>("opencurtainsfootballfog2");  
+            Sprite GAMEENDSkin1 = Resources.Load<Sprite>("closedcurtainsfootball");
+        } else if (ukrainianCurtainsSelected == true)
+        {
+            Sprite GAMESTARTSkin2 = Resources.Load<Sprite>("opencurtainsukraine");  
+            Sprite FOG1Skin2 = Resources.Load<Sprite>("opencurtainsukrainefog1");    
+            Sprite FOG2Skin2 = Resources.Load<Sprite>("opencurtainsukrainefog2");  
+            Sprite GAMEENDSkin2 = Resources.Load<Sprite>("closedcurtainsukraine");
+        } else 
+        {
+            Sprite GAMESTART = Resources.Load<Sprite>("showertimerbgclosed");  
+            Sprite FOG1 = Resources.Load<Sprite>("showertimerbgclosed1");    
+            Sprite FOG2 = Resources.Load<Sprite>("showertimerbgclosed2");  
+            Sprite GAMEEND = Resources.Load<Sprite>("showertimerbg");
+        }
 
         controls = new TouchController();
         //controls.Touch.TouchPosition.performed += ctx => ScreenIsTouch();
@@ -64,7 +91,6 @@ public class ShowerTimer : MonoBehaviour
         controls.Disable();
     }
 
-
     public float FogIncrease()
     {
         float fogIncrease = maximumFogPercentage / (timeToCompleteLevel * 12);
@@ -73,6 +99,32 @@ public class ShowerTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        roseCurtainsSelected = SkinSelection.roseCurtainsSelected;
+        footballCurtaisSelected = SkinSelection.footballCurtainsSelected;
+        ukrainianCurtainsSelected = SkinSelection.ukrainianCurtainsSelected;
+
+         if (roseCurtainsSelected == true)
+        {
+            roseCurtains.SetActive(true);
+            footballCurtains.SetActive(false);
+            ukrainianCurtains.SetActive(false);
+        } else if (footballCurtaisSelected == true)
+        {
+            roseCurtains.SetActive(false);
+            footballCurtains.SetActive(true);
+            ukrainianCurtains.SetActive(false);
+        } else if (ukrainianCurtainsSelected == true)
+        {
+            roseCurtains.SetActive(false);
+            footballCurtains.SetActive(false);
+            ukrainianCurtains.SetActive(true);
+        } else 
+        {
+            roseCurtains.SetActive(true);
+            footballCurtains.SetActive(false);
+            ukrainianCurtains.SetActive(false);
+        }
+
         localManager = FindObjectOfType<GameManagementV2>();
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         timeToCompleteLevel = localManager.calculatedTimeForLvl;
@@ -96,8 +148,24 @@ public class ShowerTimer : MonoBehaviour
         if (isTouched && currentTimer.IsRunning)
         {
             keepTiming = false;
-            canvas.GetComponent<Image>().sprite = GAMEEND;
-            Debug.Log("Touched!");
+            if (roseCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = GAMEEND;
+                Debug.Log("Touched!");
+            } else if (footballCurtaisSelected)
+            {
+                canvas.GetComponent<Image>().sprite = GAMEENDSkin1;
+                Debug.Log("Touched!");
+            } else if (ukrainianCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = GAMEENDSkin2;
+                Debug.Log("Touched!");
+            } else
+            {
+                canvas.GetComponent<Image>().sprite = GAMEEND;
+                Debug.Log("Touched!");
+            }
+
             if((showertimer <= timeToCompleteLevel * winGameThresholdMax) &&
                 (showertimer >= timeToCompleteLevel * winGameThresholdMin) ){
 
@@ -115,14 +183,37 @@ public class ShowerTimer : MonoBehaviour
         foggySurroundings.GetComponent<Image>().color = new Color(183, 183, 183, currentFogPercentage);
         if ((showertimer<= timeToCompleteLevel * fogFirstTrigger) && keepTiming == true){
             //Fog 1, best way to implement this would be to change the image of the GameObject for the windows with a second version that's slightly foggy
-            canvas.GetComponent<Image>().sprite = FOG1;
+            if (roseCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG1;
+            } else if (footballCurtaisSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG1Skin1;
+            } else if (ukrainianCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG1Skin2;
+            } else
+            {
+                canvas.GetComponent<Image>().sprite = FOG1;
+            }
         }
 
         if ((showertimer <= timeToCompleteLevel * fogSecondTrigger) && keepTiming == true){
             //Fog 2, best way to implement this would be to change the image of the GameObject for the windows with a third version that's even more foggy
-            canvas.GetComponent<Image>().sprite = FOG2;
+            if (roseCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG2;
+            } else if (footballCurtaisSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG2Skin1;
+            } else if (ukrainianCurtainsSelected)
+            {
+                canvas.GetComponent<Image>().sprite = FOG2Skin2;
+            } else 
+            {
+                canvas.GetComponent<Image>().sprite = FOG2;
+            }
         }
-
     }
 
     public void ScreenIsTouch(InputAction.CallbackContext context)

@@ -32,6 +32,10 @@ public class ArmMechanic : MonoBehaviour
     private TouchController controls;
     bool isFirstTouch = true;
 
+    //skins
+    bool usualDuckSelected, purpleDuckSelected, duckWithGlassesSelected;
+    public GameObject usualDuck, purpleDuck, duckWithGlasses;
+
     private void Awake()
     {
         //gameManagement = GameObject.FindGameObjectWithTag("gamemanager");
@@ -52,6 +56,32 @@ public class ArmMechanic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        usualDuckSelected = SkinSelection.usualDuckSelected;
+        purpleDuckSelected = SkinSelection.purpleDuckSelected;
+        duckWithGlassesSelected = SkinSelection.duckWithGlassesSelected;
+
+        if (usualDuckSelected == true)
+        {
+            usualDuck.SetActive(true);
+            purpleDuck.SetActive(false);
+            duckWithGlasses.SetActive(false);
+        } else if (purpleDuckSelected == true)
+        {
+            usualDuck.SetActive(false);
+            purpleDuck.SetActive(true);
+            duckWithGlasses.SetActive(false);
+        } else if (duckWithGlassesSelected == true)
+        {
+            usualDuck.SetActive(false);
+            purpleDuck.SetActive(false);
+            duckWithGlasses.SetActive(true);
+        } else 
+        {
+            usualDuck.SetActive(true);
+            purpleDuck.SetActive(false);
+            duckWithGlasses.SetActive(false);
+        }
+
         difficulty = PlayersProgress.difficulty;
 
         this.startPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
