@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class PartialLossManagement : MonoBehaviour
 {
+    [SerializeField] Image Enviroment1;
+    [SerializeField] Image Enviroment2;
+    [SerializeField] Image Enviroment3;
     public TextMeshProUGUI proceedToTheNextLevel;
     public TextMeshProUGUI livesLeftText;
     public TextMeshProUGUI lossIndicator;
@@ -25,6 +28,7 @@ public class PartialLossManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Enviroment1.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -55,6 +59,16 @@ public class PartialLossManagement : MonoBehaviour
         {
             proceedToTheNextLevel.text = "(4)";
             GetComponent<ButtonHandlerScript>().PlayNextGame();
+        }
+        if(livesLeft > 7 ){
+            Debug.Log("testing");
+        }else if(livesLeft > 4){
+            Debug.Log("haha");
+            Enviroment1.gameObject.SetActive(false);
+            Enviroment2.gameObject.SetActive(true);
+        }else if(livesLeft < 4){
+            Enviroment2.gameObject.SetActive(false);
+            Enviroment3.gameObject.SetActive(true);
         }
         DisplayWaterLoss();
     }
