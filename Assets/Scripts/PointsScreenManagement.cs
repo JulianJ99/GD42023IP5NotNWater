@@ -24,7 +24,7 @@ public class PointsScreenManagement : MonoBehaviour
 
     void OnEnable()
     {
-        totalPoints = PlayersProgress.totalScore - pointsToAdd;
+        totalPoints = PlayersProgress.sessionScore - pointsToAdd;
         alreadyAddedPoints = 0;
         timeUntilNextLevel = 5;
         mainPointsText.text = totalPoints.ToString();
@@ -71,7 +71,7 @@ public class PointsScreenManagement : MonoBehaviour
     IEnumerator CountdownCoroutine()
     {
         countdownStarted = true;
-        yield return new WaitForSeconds(1.06f);
+        yield return new WaitForSeconds(1.03f);
         timeUntilNextLevel--;
         countDownText.text = "(" + timeUntilNextLevel + ")";
         countdownStarted = false;

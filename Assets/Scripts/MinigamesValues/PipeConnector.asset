@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b90a2e39c122144b03bce3fac2662e, type: 3}
   m_Name: PipeConnector
   m_EditorClassIdentifier: 
-  timeToCompleteLevel: 20
+  timeToCompleteLevel: 22
   basePointsForLevel: 8
   bonusPointsMax: 3
   minigameName: Pipe Connector
-  minimumTimeThreshold: 4
+  minimumTimeThreshold: 11
   gameScenarios: 0
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 0}

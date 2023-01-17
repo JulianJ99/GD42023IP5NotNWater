@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ducks
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 14
-  basePointsForLevel: 6
-  bonusPointsMax: 4
+  basePointsForLevel: 8
+  bonusPointsMax: 6
   minigameName: Pick up!
   minimumTimeThreshold: 4
   gameScenarios: 2

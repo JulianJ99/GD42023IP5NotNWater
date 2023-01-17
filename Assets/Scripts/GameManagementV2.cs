@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManagementV2 : MonoBehaviour
 {
-    public float totalBaseScore = 0;
-    public float totalBonusScore = 0;
+    public double totalBaseScore = 0;
+    public double totalBonusScore = 0;
     public float calculatedTimeForLvl = 1000;
     public Stopwatch levelTimer = new Stopwatch();
     public MinigameValuesTemplate minigameParameters;
@@ -28,7 +29,7 @@ public class GameManagementV2 : MonoBehaviour
     public void CalculateTimeForTheLevel()
     {
         calculatedTimeForLvl = minigameParameters.timeToCompleteLevel * 1000;
-        calculatedTimeForLvl -= calculatedTimeForLvl * PlayersProgress.difficulty * 0.0425f;
+        calculatedTimeForLvl -= calculatedTimeForLvl * PlayersProgress.difficulty * 0.044f;
         if (calculatedTimeForLvl < minigameParameters.minimumTimeThreshold * 1000)
         {
             calculatedTimeForLvl = minigameParameters.minimumTimeThreshold * 1000;
@@ -73,7 +74,7 @@ public class GameManagementV2 : MonoBehaviour
             GetComponent<AudioSource>().Stop();
             gameStatus = GameStatus.Won;
             PlayersProgress.listOfPlayedMinigames.Add(SceneManager.GetActiveScene().buildIndex);
-            PlayersProgress.totalScore += CalculateScoreToAdd(playersReactionPercentage);
+            PlayersProgress.sessionScore += CalculateScoreToAdd(playersReactionPercentage);
             ResetTheTimer();
         }
         
@@ -85,9 +86,12 @@ public class GameManagementV2 : MonoBehaviour
     }
     public int CalculateScoreToAdd(float playersReductionPercentage)
     {
-        float bonusDifficultyMultiplier = 1 + (PlayersProgress.difficulty / 12);
-        totalBaseScore = Convert.ToInt32(minigameParameters.basePointsForLevel * bonusDifficultyMultiplier);
-        totalBonusScore = Convert.ToInt32((playersReductionPercentage * minigameParameters.bonusPointsMax) * bonusDifficultyMultiplier);
+        float bonusDifficultyMultiplier = 1 + (PlayersProgress.difficulty - 1f) / 13f;
+        UnityEngine.Debug.Log(PlayersProgress.difficulty);
+        UnityEngine.Debug.Log(bonusDifficultyMultiplier);
+        totalBaseScore = Math.Round(Convert.ToDouble(minigameParameters.basePointsForLevel * bonusDifficultyMultiplier));
+        UnityEngine.Debug.Log(totalBaseScore);
+        totalBonusScore = Math.Round(Convert.ToDouble(playersReductionPercentage * minigameParameters.bonusPointsMax) * bonusDifficultyMultiplier);
         return Convert.ToInt32(totalBaseScore + totalBonusScore);
     }
     public void LoseGame()

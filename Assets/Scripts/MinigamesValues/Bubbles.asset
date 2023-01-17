@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bubbles
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 12
-  basePointsForLevel: 3
-  bonusPointsMax: 5
+  basePointsForLevel: 7
+  bonusPointsMax: 8
   minigameName: Bubbles
   minimumTimeThreshold: 4
   gameScenarios: 0

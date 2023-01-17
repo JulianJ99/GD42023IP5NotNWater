@@ -20,7 +20,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
     GameObject encourageScreen;
     List<int> scenesWithMinigames = new List<int>()
     {
-        7
+        1, 2, 3, 4, 5, 8
     };
     public float livesAtTheBeginning;
     private bool funFactGenerated = false;
@@ -84,8 +84,9 @@ public class GlobalGameManagementV2 : MonoBehaviour
                     }
                     else
                     {
-                    finalScore.text = PlayersProgress.totalScore.ToString();
+                    finalScore.text = PlayersProgress.sessionScore.ToString();
                     Time.timeScale = 0;
+                    PlayersProgress.totalScore += PlayersProgress.sessionScore;
                     ActivatePartOfTheUI("lose_screen");
                     }
                     //check if theres enough lives and move to another scene if so
@@ -186,6 +187,8 @@ public class GlobalGameManagementV2 : MonoBehaviour
             if (PlayersProgress.WasTheGameAlreadyPlayed(item))
             {
                 gamesToPickFrom.Add(item);
+
+
             }
         }
         if (gamesToPickFrom.Count <= 0)
@@ -199,7 +202,7 @@ public class GlobalGameManagementV2 : MonoBehaviour
         }
         int nextGameToLoad = gamesToPickFrom[UnityEngine.Random.Range(0, gamesToPickFrom.Count)];
         minigameNr.text = "Minigame " + PlayersProgress.minigameNr;
-        score.text = PlayersProgress.totalScore.ToString() + " plants";
+        score.text = PlayersProgress.sessionScore.ToString() + " plants";
         SceneManager.LoadScene(nextGameToLoad);
         return true;
     }

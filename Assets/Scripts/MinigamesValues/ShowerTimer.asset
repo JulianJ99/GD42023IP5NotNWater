@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShowerTimer
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 8
-  basePointsForLevel: 5
+  basePointsForLevel: 7
   bonusPointsMax: 3
   minigameName: Shower timer
   minimumTimeThreshold: 3.5

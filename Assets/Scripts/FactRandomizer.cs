@@ -7,8 +7,8 @@ public class FactRandomizer : MonoBehaviour
 {
     [SerializeField]
     List<string> facts = new List<string>();
-     static List<string> constantFacts = new List<string>();
-    static List<string> remainingFacts = new List<string>();
+    static List<string> constantFacts = new List<string>();
+    List<string> remainingFacts = new List<string>();
     string fact;
     int index;
     int currentScene = -1;
@@ -25,12 +25,6 @@ public class FactRandomizer : MonoBehaviour
     {
         index = Random.Range(0, remainingFacts.Count);
         fact = remainingFacts[index];
-        remainingFacts.RemoveAt(index);
-
-        if (remainingFacts.Count <= 0)
-        {
-            remainingFacts = constantFacts;
-        }
 
         return fact;
     }

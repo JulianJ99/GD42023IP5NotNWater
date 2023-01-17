@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Soap
   m_EditorClassIdentifier: 
   timeToCompleteLevel: 11
-  basePointsForLevel: 7
+  basePointsForLevel: 8
   bonusPointsMax: 0
   minigameName: Balance!
   minimumTimeThreshold: 5

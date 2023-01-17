@@ -9,7 +9,10 @@ public class ObjectPlacementLogic : MonoBehaviour
     private int totalAllowedDifficulty = 0;
     private int maximumDifficultyThreshold = 10;
     private int distanceBetweenObstacles = 6;
-    public List<ObstacleToPlace> allObstacles; 
+    public List<ObstacleToPlace> allObstacles;
+    float timeLeft = 0;
+    float calculatedTimeForLvl = 1000;
+    public List<GameObject> puddlesToDisplay;
 
     [System.Serializable]
     public class ObstacleToPlace
@@ -24,24 +27,41 @@ public class ObjectPlacementLogic : MonoBehaviour
         CalculateObstaclesAllowed();
         InitializeObstacles();
     }
+    private void Update()
+    {
+        PuddlesManagementScript();
+    }
     private void CalculateObstaclesAllowed()
     {
-        if (PlayersProgress.difficulty <= 4)
+        totalAllowedDifficulty = PlayersProgress.difficulty;
+    }
+    private void PuddlesManagementScript()
+    {
+        int currentStatus = 0;
+        GameManagementV2 localGameManagement = FindObjectOfType<GameManagementV2>();
+        if (localGameManagement != null)
         {
-            totalAllowedDifficulty = 0;
+            timeLeft = localGameManagement.levelTimer.ElapsedMilliseconds;
+            calculatedTimeForLvl = localGameManagement.calculatedTimeForLvl;
         }
-        else if (PlayersProgress.difficulty > 4 && PlayersProgress.difficulty < 11)
+        float percentageLeft = timeLeft / calculatedTimeForLvl;
+        if (percentageLeft > 0.4f && percentageLeft < 0.56f)
         {
-            totalAllowedDifficulty = 1;
+            currentStatus = 1;
         }
-        else if (PlayersProgress.difficulty >= 11 && PlayersProgress.difficulty < 17) 
+        else if (percentageLeft > 0.56f && percentageLeft < 0.72f)
         {
-            totalAllowedDifficulty = 2;
+            currentStatus = 2;
         }
-        else
+        else if (percentageLeft > 0.72f && percentageLeft < 0.86f)
         {
-            totalAllowedDifficulty = 3;
+            currentStatus = 3;
         }
+        else if (percentageLeft > 0.86f)
+        {
+            currentStatus = 4;
+        }
+        puddlesToDisplay[currentStatus - 1].SetActive(true);
     }
     private void InitializeObstacles()
     {

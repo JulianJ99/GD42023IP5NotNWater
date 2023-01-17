@@ -14,7 +14,7 @@ public class WinManagement : MonoBehaviour
     int bonusPoints = 0;
     int preAddedPoints=  0;
     bool hasStartedAnimation = false;
-    float maximumTimeForAnimation = 1f;
+    float maximumTimeForAnimation = 0.9f;
     List<string> randomEncouragingTexts = new List<string>()
     {
         "Good job!", "Perfect!", "Excellent!", "Brilliant!", "Oh yeah", "Let's Gooo", "Nice!", "Super!", "Keep going!"
