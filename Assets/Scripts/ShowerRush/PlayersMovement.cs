@@ -15,7 +15,7 @@ public class PlayersMovement : MonoBehaviour
     public float jumpingTime = 0.5f;
     private bool isCrouching = false;
     private Vector2 initialPosition;
-
+    
     void Start()
     {
         normalSprite = GetComponent<SpriteRenderer>().sprite;

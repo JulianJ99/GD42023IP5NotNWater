@@ -65,7 +65,7 @@ public class BubbleManager : MonoBehaviour
         
         localGameManager = FindObjectOfType<GameManagementV2>();
         SpawnBubbles(bubbleCount);
-        difficulty = GlobalGameManager.Instance.difficulty;
+        difficulty = PlayersProgress.difficulty;
     }
 
     private void Awake() {

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/PointsScreenManagement.cs.meta
-guid: 78a7b3fc6a87f654e8ebbd142ebe7b36
-========
-guid: b05d77f4ac27d403489dfcaca131c8eb
->>>>>>>> origin/working:Assets/Scripts/ShopMain.cs.meta
+guid: 97084eb6fffd24a4abd64f975cb77cfa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

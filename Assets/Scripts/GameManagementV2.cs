@@ -75,6 +75,7 @@ public class GameManagementV2 : MonoBehaviour
             gameStatus = GameStatus.Won;
             PlayersProgress.listOfPlayedMinigames.Add(SceneManager.GetActiveScene().buildIndex);
             PlayersProgress.sessionScore += CalculateScoreToAdd(playersReactionPercentage);
+            PlayersProgress.totalScore += CalculateScoreToAdd(playersReactionPercentage);
             ResetTheTimer();
         }
         

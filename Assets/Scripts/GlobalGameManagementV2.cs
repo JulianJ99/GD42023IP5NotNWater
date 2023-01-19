@@ -86,7 +86,6 @@ public class GlobalGameManagementV2 : MonoBehaviour
                     {
                     finalScore.text = PlayersProgress.sessionScore.ToString();
                     Time.timeScale = 0;
-                    PlayersProgress.totalScore += PlayersProgress.sessionScore;
                     ActivatePartOfTheUI("lose_screen");
                     }
                     //check if theres enough lives and move to another scene if so

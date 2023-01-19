@@ -268,7 +268,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1876703644}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.19325985
+  m_Size: 0.19325982
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -917,6 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1827f7cb8a062410b91cf9db769b9a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toSetActive: {fileID: 0}
 --- !u!1 &848699108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1803,8 @@ GameObject:
   - component: {fileID: 2139486430}
   - component: {fileID: 2139486429}
   - component: {fileID: 2139486428}
+  - component: {fileID: 2139486431}
+  - component: {fileID: 2139486432}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1823,10 +1827,10 @@ RectTransform:
   m_Father: {fileID: 848699109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 119, y: -44.73}
-  m_SizeDelta: {x: 148.79, y: 34.45}
+  m_AnchorMin: {x: 0.16600001, y: 0.7546703}
+  m_AnchorMax: {x: 0.16600001, y: 0.7546703}
+  m_AnchoredPosition: {x: 30, y: -2}
+  m_SizeDelta: {x: 148.79, y: 34.449997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139486428
 MonoBehaviour:
@@ -1922,3 +1926,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139486426}
   m_CullTransparentMesh: 1
+--- !u!223 &2139486431
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139486426}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_TargetDisplay: 0
+--- !u!114 &2139486432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139486426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295

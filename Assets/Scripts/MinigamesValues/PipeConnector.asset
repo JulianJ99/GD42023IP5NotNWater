@@ -21,4 +21,4 @@ MonoBehaviour:
   interfaceColor: {r: 0, g: 0, b: 0, a: 0}
   musicForTheMinigame: {fileID: 0}
   minigameDescription: Connect all pipes to provide water to the shower!
-  waterAmountToLose: 3
+  waterAmountToLose: 4

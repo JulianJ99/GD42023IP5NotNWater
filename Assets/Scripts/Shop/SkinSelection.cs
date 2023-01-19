@@ -173,7 +173,8 @@ public class SkinSelection : MonoBehaviour
             Debug.Log("Item already bought!");
             return;
         } else {
-            if (PlayersProgress.totalScore >= usualToiletPrice)
+            if (PlayersProgress.totalScore
+                >= usualToiletPrice)
             {
                 PlayersProgress.totalScore -= usualToiletPrice;
                 usualToiletBought = true;

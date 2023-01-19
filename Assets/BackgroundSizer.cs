@@ -38,7 +38,6 @@ public class BackgroundSizer : MonoBehaviour
     private void SkipFact()
     {
         Debug.Log("skipped");
-        gameObject.GetComponentInParent<GlobalGameManager>().BackToMainScreen();
     }
 
     void Update()

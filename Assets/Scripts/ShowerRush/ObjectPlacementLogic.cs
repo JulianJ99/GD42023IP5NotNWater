@@ -33,7 +33,27 @@ public class ObjectPlacementLogic : MonoBehaviour
     }
     private void CalculateObstaclesAllowed()
     {
-        totalAllowedDifficulty = PlayersProgress.difficulty;
+        if (PlayersProgress.difficulty <= 2)
+        {
+            totalAllowedDifficulty = 1;
+        }
+        else if (PlayersProgress.difficulty <= 6 && PlayersProgress.difficulty > 2)
+        {
+            totalAllowedDifficulty = 2;
+        }
+        else if (PlayersProgress.difficulty > 6 && PlayersProgress.difficulty <= 12)
+        {
+            totalAllowedDifficulty = 3;
+        }
+        else if (PlayersProgress.difficulty > 12)
+        {
+            totalAllowedDifficulty = 4;
+        }
+        if (totalAllowedDifficulty > 4)
+        {
+            totalAllowedDifficulty = 4;
+        }
+        
     }
     private void PuddlesManagementScript()
     {
@@ -72,6 +92,10 @@ public class ObjectPlacementLogic : MonoBehaviour
             if (totalDifficultyObjects < totalAllowedDifficulty)
             {
                 int itemToPick = UnityEngine.Random.Range(0, allObstacles.Count);
+                if (totalAllowedDifficulty == 4 && i == 0)
+                {
+                    itemToPick = 1;
+                }
                 if (totalDifficultyObjects + allObstacles[itemToPick].difficultyLevel > 3)
                 {
                     i -= 1;

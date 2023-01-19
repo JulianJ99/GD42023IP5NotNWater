@@ -8,6 +8,8 @@ public class ConstantGameObj : MonoBehaviour
     public string objectName = "none";
     void Start()
     {
+        UnityEngine.Debug.Log(Screen.height);
+        UnityEngine.Debug.Log(Screen.width);
     }
 
     private void Awake()

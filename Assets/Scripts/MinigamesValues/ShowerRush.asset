@@ -22,4 +22,4 @@ MonoBehaviour:
   musicForTheMinigame: {fileID: 8300000, guid: 3862653b8b8097248ba1f50d845b7eb5, type: 3}
   minigameDescription: Navigate using WASD, and rush to the shower to close it before
     it's too late!
-  waterAmountToLose: 2
+  waterAmountToLose: 3
